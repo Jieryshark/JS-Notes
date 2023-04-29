@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //  let num = [1, 2, 3, 4, 5];
+        //   let sum1 = 0, sum2 = 0, sum3 = 0, sum4 = 0, sum5 = 0;
+         /* //基本for
+          for (let i = 0; i < num.length; i++) {
+              sum1 += num[i];
+          }
+          document.write(`基本for实现数组和为${sum1}<br>`);
+  
+          //map
+          num.map(
+              function (item, index, arry) {
+                  sum2 += item;
+              }
+          )
+          document.write(`${sum2}<br>`)
+  
+          //forEach
+          num.forEach(
+              function (item, index, arr) {
+                  sum3 += item;
+              }
+          )
+          document.write(`${sum3}<br>`);
+  
+          // of
+          for (let item of num) {
+              sum4 += item;
+          }
+          document.write(`${sum4}<br>`);
+  
+          // in
+          for (let index in num) {
+              sum5 += num[index];
+          }
+          document.write(`${sum5}<br>`); */
+
+        /* let arry = [100000, 222222222, 333, 55];
+       let max = arry[0];
+       // 基本for实现
+       for (let i = 0; i < arry.length; i++) {
+           let value = arry[i];
+           value > max ? max = value : null;
+       }
+       document.write(`max为:${max}<br>`);
+
+       //of实现最大值
+       let max2 = arry[0];
+       for (item of arry) {
+           let value2 = item;
+           value2 > max2 ? max2 = value2 : null
+       }
+       document.write(`max为:${max2}<br>`)
+
+       //of实现最小值
+       let min = arry[0];
+       for (item of arry) {
+           let value3 = item;
+           value3 < min ? min = value3 : null
+       }
+       document.write(`min为:${min}<br>`);  */
+
+        // 1.用户输入五个数字，求平均值，保留两位小数
+        // 2.遇到非数字，自动结束，求平均值，保留两位小数
+        // 3.遇到非数字，用户继续输入，求平均值，保留两位小数
+        let num = [];
+        let sum = null;
+        alert('输入五个数，每一次输入一个数字');
+        //用户输入
+        for (let i = 0; i < 5; i++) {
+            num[i] = prompt(`输入第${i + 1}个数字`);
+            num[i] = Number(num[i])
+            //判断其输入是否为数字
+            /* if (num[i] !== Number(num[i])) {
+                break;
+            } */
+            //isNaN方法实现
+            if (isNaN(num[i])) {
+                break;
+            }
+        }
+        console.log(num);
+        //数组中的值之和
+        let i = 0;//计算数组 中数字总个数
+        for (let item of num) {
+            //只求数字之和
+            /*  if (item == Number(item)) {
+                 sum += item;
+                 i++;
+             } */
+            if (!isNaN(item)) {
+                sum += item;
+                i++;
+            }
+        }
+        //求平均数
+        console.log(`平均数为${(sum / i).toFixed(2)}`);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

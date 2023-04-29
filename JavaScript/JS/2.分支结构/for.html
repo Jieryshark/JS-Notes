@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //for(定义初始值；循环条件；循环增量或减量){循环块}
+    /*  var sum = 0;
+     for (var  i = 0; i <= 100 ; i++) {
+         sum = sum+i;
+     }
+     console.log(sum);
+  */
+
+    //正方形
+    var aa = '';
+    for (var a = 0; a < 5; a++) {
+        for (var s = 0; s < 5; s++) {
+            aa += '❤️';
+        }
+        // aa += '\n'
+        aa += '<br>';
+    }
+    document.write(aa);
+    // console.log(aa);
+
+    //乘法口诀表
+    /*  var chengfa = '';
+     for (var i = 1; i <= 9; i++) {
+         for (var j = 1; j <= i ; j++) {
+             // document.write(j + '*' + i + '=' + (i * j) + '&nbsp');
+             // chengfa += (j + '*' + i + '=' + (i * j) + '&nbsp');
+             chengfa += `${j}*${i}=${j*i} &nbsp; &nbsp;`;
+         }
+         // document.write('<br>');
+         chengfa += `<br>`;
+ 
+     }
+     document.write(chengfa); */
+    //利用if判断形成乘法口诀表
+    /*  var chengfa = '';
+     for (var i = 1; i <= 9; i++) {
+         for (var j = 1; j <= 9 ; j++) {
+             if (j<=i){
+             chengfa += `${j}*${i}=${j*i} &nbsp; &nbsp;`;
+             }
+         }
+         chengfa += `<br>`;
+     }
+     document.write(chengfa);
+ 
+     // 倒三角
+     var value = '';
+     for (var q = 0; q < 6; q++) {
+         for (var w = 6; w >= q; w--) {
+             value += '😺';
+         }
+         value += '<br>';
+     }
+     document.write(value);13
+ 
+     // 正三角
+     var value2 = '';
+     for (var q = 0; q < 6; q++) {
+         for (var w = 0; w < q+1; w++) {
+             value2 += '😺';
+         }
+         value2 += '<br>';
+        }
+     document.write(value2);
+      */
+
+
+    var sum = null;   //正確值為2500
+    for (var i = 450; i <= 550; i++) {
+       /*  if (i%2 != 0) {
+            // Number(i);
+            sum +=i;
+        } */
+        /* while(i%2 !=0){
+            sum += i;
+            break;
+        } */
+        // sum += i;
+
+        // sum += i;
+        // i++;
+
+
+        i++
+        i <= 550 ? sum += i : sum
+        
+    }
+    console.log(sum);
+
+
+
+</script>
+
+</html>

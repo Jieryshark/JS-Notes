@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    // 1.分别用原始模式，工厂模式，构造函数模式创建一个盒子对象
+    // 1).原始模式
+    let box = {
+        width: 12,
+        height: 30,
+        background_color: 'pink',
+        position: 'up',
+        long: 2,
+        // 方法getSize()获取盒子大小。返回数字，默认平方厘米。
+        getsize: function () {
+            let mianji = this.width * this.long;
+            return mianji;
+        }
+    }
+    console.log('盒子大小:', box.getsize());// 获取盒子大小
+    //原始模式 object函数模式
+    let box1 = new Object();
+    box1.width = 20;
+    box1.height = 30;
+    box1.background_color = 'pink';
+    box1.position = 'up';
+    box1.long = 200;
+    box1.getsize = function () {
+        let mianji = this.width * this.long;
+        return mianji;
+    }
+    console.log('盒子大小:', box1.getsize());// 获取盒子大小
+    // 2).工厂模式
+    function gvie_box(width, height, background_color, position, long) {
+        let box = {};
+        box.width = width;
+        box.height = height;
+        box.background_color = background_color;
+        box.position = position;
+        box.long = long;
+        box.getsize = function () {
+            let mianji = this.width * this.long;
+            return mianji;
+        }
+        return box;
+    }
+    let box2 = gvie_box(20, 30, 'pink', 'up', 2);
+    console.log('盒子大小:', box.getsize());
+    //3).构造函数模式
+    function Gvie_box(width, height, background_color, position, long) {
+        this.width = width;
+        this.height = height;
+        this.background_color = background_color;
+        this.position = position;
+        this.long = long;
+        this.getsize = function () {
+            let mianji = this.width * this.long;
+            return mianji;
+        }
+    }
+    let box3 = new Gvie_box(20, 30, 'pink', 'up', 5);
+    let box4 = new Gvie_box(20, 30, 'pink', 'up', 50);
+    console.log('盒子大小:', box3.getsize());
+    // console.log(box, box1, box2, box3, box4);
+
+    // 2..给所有字符串添加一个方法replaceAll方法的，实现一下功能。"abcaba.replaceAll(ax)，替换所有的字母a为z，返回结果为'xbcxbx。
+    String.prototype.replaceT = function (tergt, value) { //在字符串原型上添加方法replaceT
+        return this.split(tergt).join(value)//this指向函数本身 这里函数本身就是就是'abcba'
+    }
+    console.log('abacad'.replaceT('a', 'x'));
+
+    // 3.给数组添加一个方法max，min可以返回数组的最大值和最小值，且不改变原数组。
+    Array.prototype.give_maxmin = function () { //数组添加一个方法give_maxmin
+        // 进行深拷贝
+        function deepcopy(obj) {
+            if (typeof (obj) != 'object') {
+                return obj;
+            }
+            let result;
+            if (Array.isArray(obj)) {
+                result = [];
+            } else {
+                result = {};
+            }
+            for (let key in obj) {
+                result[key] = deepcopy(obj[key])
+            }
+            return result;
+        }
+        let result = deepcopy(this)
+        result.sort(   //进行排序
+            (a, b) => {
+                return a - b
+            }
+        )
+        console.log(`原数组:${this}`);
+        return `最大值:${result[0]},最小值:${result[result.length - 1]}`;;
+    }
+    console.log([1, 2, 4, 1, 67, 2, -1].give_maxmin());
+
+    // 4..给数组添加一个add方法，该方法接受一个参数为另一个数组，返回两个数组对应位置相加的和的数组。对较短数组后的位置，可以当作0处理。如[1,2,3].add([2,3])返回[3,5,3]。
+    Array.prototype.add = function (arr) { //给数组添加一个add方法
+        // 判断长度，决定谁作为被加数，加数
+        if (this.length > arr.length) {
+            //循环被加数数组元素
+            this.map(
+                (itme, index) => {
+                    //短数组后面没有元素就不加
+                    if (Number(arr[index])) {
+                        this[index] += arr[index]
+                    }
+                }
+            )
+            return this;
+        } else {
+            arr.map(
+                (itme, index) => {
+                    if (Number(this[index])) {
+                        arr[index] += this[index]
+                    }
+                }
+            )
+            return arr;
+        }
+    }
+    console.log([1, 2, 3].add([3, 4]));
+
+</script>

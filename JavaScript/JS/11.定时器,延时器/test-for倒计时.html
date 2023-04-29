@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .box {
+      background-color: rgb(9, 131, 192);
+      width: 700px;
+      height: 100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-around;
+      border-radius: 30px;
+    }
+
+    .box span {
+      display: inline-block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      font-size: 50px;
+    }
+
+    .biaoti {
+      width: 700px;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 50px;
+    }
+  </style>
+  <body>
+    <div class="box">
+      <span class="day"></span>
+      <span class="tetx">天</span>
+      <span class="hours"></span>
+      <span class="tetx">小时</span>
+      <span class="minutes"></span>
+      <span class="tetx">分钟</span>
+      <span class="seconds"></span>
+      <span class="tetx">秒</span>
+    </div>
+  </body>
+</html>
+<script>
+  var refresh_countdown = setInterval(countdown, 1000); //设置定时器
+  //获取元素
+  let day = document.querySelector(".day");
+  let hours = document.querySelector(".hours");
+  let minutes = document.querySelector(".minutes");
+  let seconds = document.querySelector(".seconds");
+  countdown(); //先调用一次函数，以免进页面延迟一秒才调用
+  function countdown() {
+    let end_time = new Date("2022/11/18 09:50:00"); //设定截止日期
+    let now_time = new Date(); //获取当前时间
+    let milliseconds = end_time - now_time; //时间戳差值
+    //计算时间并渲染到页面
+    day.innerHTML = Math.floor(milliseconds / 1000 / 60 / 60 / 24); 
+    hours.innerHTML = Math.floor((milliseconds / 1000 / 60 / 60) % 24); 
+    minutes.innerHTML = Math.floor((milliseconds / 1000 / 60) % 60); 
+    seconds.innerHTML = Math.floor((milliseconds / 1000) % 60); 
+  }
+</script>

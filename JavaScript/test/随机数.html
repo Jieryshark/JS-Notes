@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    let arr_random = [];//随机数组
+    for (let i = 0; i < 5; i++) {
+        // Math.random() :返回0-1的随机浮点数,包括0,不包括1
+        // arr_random[i] =  Math.floor(Math.random()*(100-80)+80); //获取80到100的随机数
+        //公式：Math.random()*(max-min)+(min)
+        // Math.floor()向下取整 Math.ceil()向上取整
+        arr_random[i] = Math.ceil(Math.random() * (100 - 80) + 80);
+    }
+    console.log(arr_random);
+    // 返回指定数值之间的随机数
+    function rand(value1, value2) {
+        if (value1 > value2) {
+            (max = value1), (min = value2);
+        } else {
+            (max = value2), (min = value1);
+        }
+        let rand = Math.floor(Math.random() * (max - min) + min);
+        return rand;
+    }
+</script>

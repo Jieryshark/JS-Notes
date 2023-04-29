@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    //增加 键值对 有覆盖效果
+    let obj1 = new Object();
+    obj1.name = '艾伦';    // . 1.第一种方法
+    obj1['height'] = 180; // [''] 2.第二种方法
+    obj1.name = ['艾伦','三笠','阿尔敏'];
+    obj1.bite=function(){
+        return'haha';
+    }
+    
+    console.log(obj1);
+    //删除 delete是删除指定的整个属性全部
+    // delete obj1.name;
+    // console.log('删除后',obj1);
+
+    //改
+    obj1.name = ['Jon','科尼','莎夏'];
+    obj1['height']=199;
+    console.log('更改后',obj1);
+
+    //查
+    console.log(obj1.name);
+    console.log(obj1.bite());//如果属性值是方法，则需加上括号调用
+</script>

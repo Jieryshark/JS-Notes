@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    //过滤元素 
+    //filter 1.不会改变原数组 2.一定要写return
+    let arr1 = [1, 3, 5, 6, 9, 50, 13];
+    let value_arr1 = arr1.filter(
+        (itme, index, arr) => {
+            return itme % 2 == 1;
+        }
+    )
+    console.log(value_arr1);
+
+    //查询数组元素 总结：如果返回的是下标值，没有该元素都是返回-1
+    // indexOf() | lastIndexOf 1.返回遇到的第一个指定元素的下标值 2.数组中没有指定元素则返回-1
+    let arr2 = [1, 2, 6, 4, '哈哈', 6, '哈哈', 4, 'oo'];
+    console.log(arr2.indexOf('哈哈'));//从前往后检测
+    console.log(arr2.lastIndexOf('哈哈'));//从后往前检测
+    //includes() 1.检测指定元素是否存在数组中，存在返回true，否则返回false
+    console.log(arr2.includes('哈哈'));
+    //find() 1.检索数组中指定元素，有则返回从前往后最先遇到的该元素，否则返回undefind
+    let find_value = arr2.find(
+        (itme) => {
+            return itme == 0;
+        }
+    )
+    console.log(find_value);
+    //findindex 1.检索数组中指定元素，有则返回从前往后最先遇到的该元素下标值，否则返回-1
+    let findindex_value = arr2.findIndex(
+        (itme) => {
+            return itme == 4;
+        }
+    )
+    console.log(findindex_value);
+
+    //es6的新属性 数组去重:new Set()
+    let arr = [1,2,2,1,3,5,5,8,3]  
+    new_arr = new Set(arr);
+    console.log(typeof(new_arr));
+    console.log(new_arr);
+    console.log(Array.from(new_arr));//转换为数组 Array.from
+
+</script>

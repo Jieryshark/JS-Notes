@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    // DATE
+    let now_time = new Date();//获取当前日期时间
+    console.log(now_time);
+    //.to
+    console.log(now_time.toDateString());
+    console.log(now_time.toString());
+    console.log(now_time.toTimeString());
+    console.log(now_time.toUTCString());
+    console.log(now_time.toISOString());
+    console.log(now_time.toLocaleString());
+    // .get
+    console.log(now_time.getTime());
+    console.log(now_time.getDate());//返回日期
+    console.log(now_time.getDay());//返回周几
+    console.log(now_time.getHours());//返回小时（0-23）
+    console.log(now_time.getMinutes());//返回分钟（0-59）
+    console.log(now_time.getSeconds());//返回秒（0-59）
+    console.log(now_time.getMonth());//（0表示1月，11表示12月）
+    console.log(now_time.getFullYear());//返回当前年份
+    console.log(now_time.getMilliseconds());//返回毫秒（0-999）
+    //set
+    console.log(now_time.setDate(Date));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //test 在屏幕打印当前时间
+    var time = new Date;
+    //get
+    document.write(`
+    ⏱️
+    ${time.getFullYear()}年
+    ${time.getMonth() + 1}月
+    ${time.getDate()}日
+    ${time.getHours()}时
+    ${time.getMinutes()}分
+    ${time.getSeconds()}秒
+    ${time.getMilliseconds() + 1}毫秒
+    `)
+    //to
+
+
+
+</script>

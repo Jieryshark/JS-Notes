@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    //this指向 this在第二层时指向全局,this指向全局时定义的变量须使用var, 2.在第三层时指向上一层
+    var name1 = '希斯特里亚', skill = '跳舞';
+    let obj = {
+        name: this.name1,
+        skill: this.skill,
+        fun: function () {
+            console.log('名字', this.name, '擅长', this.skill);
+        }
+    }
+    obj.fun()
+
+
+    var person = { name: '莱纳', skill: '坐下' }
+    let obj1 = {
+        obj1_fun: function (age, color, height) {
+            // console.log(`名字:${this.name} 擅长:${this.skill}`); 
+            return `名字:${this.name} 擅长:${this.skill} 年龄:${age} 发色:${color} 身高${height}`;
+        }
+    }
+    //call 改变this指向 可传参
+    // console.log(obj1.obj1_fun.call(person,18,'brow',183));//call 也可以进行传参 第一位参数为指向
+    //apply 改变this指向 可传参
+    // console.log(obj1.obj1_fun.apply(person, [20, 'balke', 160]));//apply 也可以进行传参 第一位参数为指向,后面传参用[]包bin裹
+    //bind 改变this指向 可传参
+    console.log(obj1.obj1_fun.bind(person)(20, 'balke', 160));//bind 也可进行传参 但bind是返回一个函数须在后面多加一个()调用
+
+
+    //例子
+    function Person(){
+        this.country='中国';
+    };
+    function Student(name,age){
+        this.name=name;
+        this.age=age;
+        // Person.bind(this)();
+        Person.call(this);
+        // Person.apply(this);
+    }
+    var stu1=new Student('jon',20);
+    console.log(stu1);
+
+    //例子
+    function pucil(){
+        
+    }
+</script>

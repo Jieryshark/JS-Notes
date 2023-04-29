@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    // 字符串 ('')
+    // 单双引号都可作为字符串包括符号 使用规范如下:
+    let str1 = "hello,I'am petter!";
+    let str2 = 'hello,I"am petter!';
+    console.log(str1, str2);
+
+    //字符串与数组
+    let str = 'ABCDE F';
+    let str_number = 12.9;
+    let arr = ['A', 'B', , 'C', 'D', 'E', 'F'];
+    //长度公用 .length  空位也算一个长度
+    console.log(str.length);
+    console.log(arr.length);
+    // 查询某一个元素 公用 都可用[下标值]获取,访问某一元素
+    console.log(arr[arr.length - 1]);
+    console.log(str[str.length - 1]);
+    console.log(parseInt(str_number));
+    //转义符 反斜杠\  \n:换行符 \t:制表符 等等
+    const str_nice = 'nice\nto\t\t\t\t\tmeet\'you'
+    console.log(str_nice);
+    // charCodeAt 字符串转化为十六进制的unicode
+    console.log(str_nice.charCodeAt(2));
+    //.tostring  .tostring(可填为转换为x进制)
+    let number = 10;
+    console.log(number.toString(2));
+    // String.fromCharCode(numcode) 可通过ascii表返回对应值
+    console.log(String.fromCharCode(97));
+   
+</script>

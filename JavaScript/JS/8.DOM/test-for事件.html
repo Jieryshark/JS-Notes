@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #but_box {
+            width: 500px;
+            height: 500px;
+            margin: auto;
+            outline: 2px solid black;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .color {
+            height: 100px;
+            width: 100px;
+            background-color: brown;
+            border-radius: 20px;
+            font-size: 20px;
+            transition: all 0.5s linear;
+        }
+        .www{
+            color: green;
+        }
+        .a_color{
+            color: rgb(255, 0, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="but_box">
+        <a href="http://www.daidu.com" class="a_color">百度一下</a>
+        <button>点我一下</button>
+        <div id="value"></div>
+    </div>
+</body>
+
+</html>
+<script>
+    let but = document.getElementsByTagName('button');
+    let value = document.getElementById('value');
+    let a_color = document.getElementsByTagName('a');
+    but[0].onclick = function () {
+        a_color[0].classList.toggle('a_color')
+    }
+</script>

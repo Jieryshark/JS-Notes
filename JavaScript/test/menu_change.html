@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<style>
+  .check {
+    color: red;
+  }
+
+  .show {
+    display: inline-block;
+  }
+
+  .top {
+    justify-content: space-around;
+    display: flex;
+    height: 50px;
+  }
+
+  .boxBig {
+    width: 400px;
+    height: 100px;
+    margin: 10px auto;
+    border: 1px solid red;
+  }
+
+  .box5 {
+    display: flex;
+    height: 40px;
+  }
+
+  .context {
+    display: none;
+  }
+
+  .style_box {
+    color: red;
+
+  }
+</style>
+
+<body>
+  <div class="boxBig">
+    <div class="top">
+      <div class="box check">蔬菜</div>
+      <div class="box">肉类</div>
+      <div class="box">副食</div>
+      <div class="box">水果</div>
+    </div>
+    <div class="box5">
+      <div class="div1">蔬菜1 蔬菜2</div>
+      <div class="context div1">肉类1 肉类2</div>
+      <div class="context div1">副食1 副食1</div>
+      <div class="context div1">水果1 水果2</div>
+    </div>
+  </div>
+</body>
+
+</html>
+<script>
+  let div1 = document.querySelectorAll(".div1");
+  let box = document.querySelectorAll(".box");
+  for (let index = 0; index < box.length; index++) {
+    box[index].onclick = function () {
+      for (let i = 0; i < box.length; i++) {
+        if (i == index) {
+          div1[i].classList.remove("context");
+          box[i].classList.add('check');
+        } else {
+          div1[i].classList.add("context");
+          box[i].classList.remove('check',);
+        }
+      }
+    };
+  }
+</script>

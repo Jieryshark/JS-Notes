@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    /*  .box {
+        width: 100px;
+        height: 100px;
+        background-color: skyblue;
+        transform: translateX(100px) translateY(100px);
+        position: absolute;
+        top: 200px;
+        bottom: 200px;
+        left: 200px;
+        right: 200px;
+        transition: all 0.5s linear;
+      } */
+    body {
+      outline: 1px solid black;
+      height: 800px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box" style="
+        width: 100px;
+        height: 100px;
+        background-color: skyblue;
+        position:relative;
+        /* left: 30px; */
+        transition: all 0.25s linear;
+      "></div>
+</body>
+
+</html>
+<script>
+  let box = document.querySelector(".box");
+  var upPx = 0;
+  var leftPx = 0;
+
+  console.log(box);
+  window.onkeydown = function (event) {
+    if (event.key === "ArrowUp") {
+      console.log("上");
+      upPx -= 10;
+      box.style.top = `${upPx}px`;
+    } else if (event.key === "ArrowDown") {
+      console.log("下");
+      upPx += 10;
+      box.style.top = `${upPx}px`;
+    } else if (event.key === "ArrowLeft") {
+      console.log("左");
+      leftPx -= 10;
+      box.style.left = `${leftPx}px`;
+    } else if (event.key === "ArrowRight") {
+      console.log("右");
+      leftPx += 10;
+      box.style.left = `${leftPx}px`;
+    }
+  };
+</script>

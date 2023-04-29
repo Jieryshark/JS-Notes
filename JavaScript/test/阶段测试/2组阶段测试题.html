@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    //1.转化成字符串的方法有哪些，请举例？Boolean()为false的情况有哪些？ 
+    let str = ['s', 'tring'];
+    // str = str.join('');
+    console.log(str.toString(str));
+    console.log(Boolean(0));
+    console.log(Boolean());
+    console.log(Boolean(''));
+    console.log(Boolean(undefined));
+    console.log(Boolean(null));
+    console.log(Boolean(NaN));
+
+    /*4.大家都知道，男大当婚，女大当嫁。那么女方家长要嫁女儿，当然要提出一定的条件(if|switch)
+    高：180cm以上; 富:1000万以上; 帅:颜值80以上;
+    如果这三个条件同时满足，则:'我一定要嫁给他'
+    如果三个条件有为真的情况，则:'嫁吧，比上不足，比下有余。'
+    如果三个条件都不满足，则:'不嫁！' */
+    // let heiht = prompt('输入你的身高(cm)'), rich =prompt('输入你的家产(w)'), hansome = prompt('输入你的颜值(0-100)');
+    // switch (true) {
+    //     case heiht > 180 && rich > 1000 && hansome > 80: alert('我一定要嫁给他'); break;
+    //     case heiht > 180 || rich > 1000 || hansome > 80: alert('嫁吧，比上不足，比下有余'); break;
+    //     default: alert('不嫁！');
+    // }
+
+    /* 6.从键盘输入小明的期末成绩(if|switch)
+    当成绩为100时，'奖励一辆BMW'
+    当成绩为[80-99]时，'奖励一台iphone15s'
+    当成绩为[60-80]时，'奖励一本参考书'
+    其他时奖励“奖励两本练习题册” */
+    // let value = prompt('输入你的成绩(0-100)');
+    // if (value == 100) {
+    //     alert('奖励一辆BMW')
+    // } else if (value >= 80 && value < 99) {
+    //     alert('奖励一台iphone15s')
+    // } else if (value > 60 && value < 80) {
+    //     alert('奖励一本参考书')
+    // } else {
+    //     alert('考这么差，拖出去斩了')
+    // }
+
+    // 8.将字符串”border-bottom-color” 转换成驼峰命名”borderBottomColor”
+    let string1='border-bottom-color'.split('');
+    // 修改第一个驼峰
+    let index=string1.indexOf('-');
+    string1.splice(index,2,string1[index+1].toUpperCase());
+    // 修改第二个驼峰
+    index=string1.indexOf('-');
+    string1.splice(index,2,string1[index+1].toUpperCase());
+    console.log(string1.join(''));
+
+    //10.删除字符串 “01i13P47h2o39n32e09” 中的所有数字，输出结果
+    let string2='01i13P47h2o39n32e09';
+    console.log(string2.replace(/[0-9]/g,''));
+
+    //12.随机输入一个单词，判断该单词是否为回文词。回文即颠倒字符串顺序以后和本身一样，如'abcba'。\
+    // let string3=prompt('输入一个单词');
+    // if(string3==string3.split('').reverse().join('')){
+    //     alert('是回文词');
+    // }else{
+    //     alert('不是回文词');
+    // }
+
+    //14.随机输入一个数组，数组元素是数字或者字符串，除该数组中重复的元素
+    let arry=[2,5,6,9,2,4,7,4,6,9,'nihao','nihao'];
+    let new_arry=new Set(arry);
+    console.log(new_arry);
+
+    // 16.封装一个函数，函数接收2个参数，参数为正整数，返回两个数之间的随机整数。如f(10,20)，返回10-20之间的整数
+    function give_rand(value1,value2){
+        if(value1>value2){
+            let max = value1;
+            let min =value12;
+        }else{
+            max=value2;
+            min=value1
+        }
+        return Math.floor(Math.random()*(max-min)+min);
+    }
+    console.log(give_rand(10,14));
+
+    //18.封装一个函数，输入一个数组，返回一个包含数组中的最大值和最小值得函数,如输入[2,4,6,9,3] 返回 [9,2]。
+    function give_maxmin_arry(value){
+        let arry=[];
+        value.sort(
+            (a,b)=>{
+                return a-b;
+            }
+        )
+        arry[0]=value[0];
+        arry[1]=value[value.length-1];
+        return arry
+    }
+    console.log( give_maxmin_arry([1,2,3,4,56,6,78,8]));
+   
+   //20.封装一个函数，输入一个参数age，如果age>18则打印"你可以浏览此网站了"，否则打印"还是去看葫芦娃吧！"
+   function give_string(age){
+    if(age>=18){
+        return '你可以浏览此网站了'
+    }else{
+        return '还是去看葫芦娃吧！'
+    }
+   }
+   console.log(give_string(17));
+</script>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./JavaScript/jQuery/jQuery.js"></script>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    div {
+        height: 300px;
+        background-color: pink;
+    }
+</style>
+
+<body>
+    <div></div>
+</body>
+
+</html>
+<script>
+   
+   //获取页面大小，在窗口尺寸发生变化时触发
+    const getWindowInfo = () => {
+        windowInfo = {
+            width: window.innerWidth,
+            hight: window.innerHeight
+        }
+        console.log(windowInfo);
+    };
+
+    const debounce = (fn, delay) => {
+        let timer;
+        return function () {
+            if (timer) {
+                clearTimeout(timer);
+            }
+            timer = setTimeout(() => {
+                fn();
+            }, delay);
+        }
+    };
+    const cancalDebounce = debounce(getWindowInfo, 500);
+    window.addEventListener('resize', cancalDebounce);
+
+   /*  const windowInfo = {
+        width: window.innerWidth,
+        hight: window.innerHeight
+    };
+    console.log(windowInfo);
+    $('div').css({
+        width: `${windowInfo.width}px`
+    }) */
+</script>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="clearData()">点击清除本地及会话数据</button>
+  </body>
+</html>
+<script>
+  /*  会话存储和本地存储常用的方法：
+   `setItem(key, val)`：存储数据 & 修改数据
+   `getItem(key)`：获取数据
+   `removeItem(key)`：移除数据
+   `clear()`：清空数据 */
+
+  let user = {
+    Name: "kaly",
+    password: 123456,
+  };
+
+  //会话存储
+  //存储数据，如果属性名存在，那就修改
+  sessionStorage.setItem("userData", JSON.stringify(user)); //用josn转换存储
+  //获取数据
+  console.log(JSON.parse(sessionStorage.getItem("userData"))); //json解析
+
+  //本地存储
+  //存储数据，如果属性名存在，那就修改
+  localStorage.setItem("userData", JSON.stringify(user));
+  //获取数据
+  console.log(JSON.parse(localStorage.getItem("userData")));
+  //删除数据
+  //   localStorage.clear("userName")
+  function clearData(){
+    localStorage.clear()//不写具体值就全部删除
+    sessionStorage.clear()
+  }
+</script>

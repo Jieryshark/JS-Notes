@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    //Josn
+    let arr = [
+        {
+            name: '哪吒',
+            say: '去你的鸟命',
+        }, {
+            name: '敖丙',
+            sex: '男'
+        }
+    ];
+    let josn_data = JSON.stringify(arr);// JSON.stringify() 转换为josn格式 传给后端
+    console.log(arr, josn_data);
+    let data = JSON.parse(josn_data);// JSON.parse() 将josn转换为对应格式
+    console.log(data);
+</script>

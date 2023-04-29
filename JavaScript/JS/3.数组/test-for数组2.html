@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    //数组去重
+    let arr = [1, 2, 2, 2, 2, 2, 3, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 6, 7, '呵呵', 8, '呵呵', 2, 5, 4];
+    let new_arr = [];
+    //es6的新属性 数组去重:new Set9()  
+    new_arr = new Set(arr);
+    console.log(Array.from(new_arr));//转换为数组 Array.from
+    /*  for (let itme of arr) {
+         //判断其是否在另一个数组中存在
+         if (!new_arr.includes(itme)) {
+             new_arr.push(itme);
+         }
+     } */
+    /*  arr.map(
+         (itme) => {
+             if (new_arr.indexOf(itme) == -1) {
+                 new_arr.push(itme)
+             }
+         }
+     ) */
+    /*  new_arr = arr.filter(
+         (itme,index)=>{
+             return arr.indexOf(itme) == index;
+         }
+     ) */
+
+    //冒泡排序 当数字相同太多时会有bug
+    /* for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[j] == arr[i]) {
+                arr.splice(j, 1);
+                j--;//bug排除
+            }
+        }
+    } */
+
+    // console.log(arr);
+    console.log(new_arr);
+</script>

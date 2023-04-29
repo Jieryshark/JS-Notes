@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  //延时器
+  console.log("1");
+  var yanshi = setTimeout(function () {
+    console.log("延时");
+  }, 2000);
+  clearTimeout(yanshi); //清除延时器
+  console.log("2");
+  //定时器 在里面调用函数不用加括号
+  var dingshi = setInterval(() => {
+    let now_time = new Date();
+    console.log(now_time.toLocaleString());
+  }, 1000);
+  clearInterval(dingshi);//清除定时器
+</script>

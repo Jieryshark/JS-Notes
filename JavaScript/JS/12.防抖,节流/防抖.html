@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      outline: 1px solid red;
+    }
+  </style>
+  <body>
+    <div></div>
+  </body>
+</html>
+<script>
+  /* onscroll / onresize / mousemove  等是高频率触发事件*/
+  let div = document.querySelector("div");
+
+  //普通高频触发事件
+  /* div.addEventListener("mouseover", function () {
+    console.log(`高频触发事件mousemove`);
+  }); */
+
+
+  //防抖高频触发事件 将高频率事件设为只触发最后一次
+  div.addEventListener("mouseover", debounce(fn, 1000));
+  function debounce(fn, time) {
+    let timer = null;
+    return function () {
+      clearTimeout(timer);
+      timer = setTimeout(fn, time);
+    };
+  }
+  function fn () {
+    console.log("我是高频率触发事件防抖");
+  };
+</script>

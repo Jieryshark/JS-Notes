@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #check {
+      position: absolute;
+      top: 100px;
+      width: 500px;
+      outline: 1px solid black;
+    }
+    .shiju {
+      outline: 1px solid black;
+      /* width: 200px;
+      height: 200px; */
+    }
+  </style>
+  <body>
+    <div class="shiju">
+      <br />
+      <pre>昨夜星辰昨夜风</pre>
+      <pre>画楼西畔桂堂东</pre>
+    </div>
+    <p id="check">你选中的内容是：</p>
+  </body>
+</html>
+<script>
+  //窗口方法
+  //   window.open('http://www.baidu.com','_blank')
+  //   window.close();
+  //   window.print();
+
+  let shiju = document.querySelector(".shiju");
+  let check = document.querySelector("#check");
+  shiju.addEventListener("mouseup", function () {
+    let setobj = getSelection();
+    let setText = setobj.toString();
+    check.innerHTML = `<p id="check">你选中的内容是：${setText} </p>`;
+  });
+</script>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+
+
+    month = prompt('请输入你的出生月份');
+    // 数据类型转换 null转化为0
+    Number(month);
+    // 判断是否正确输入
+    if ((!(month < 13 && month > 0)) || month == (0)) {
+        alert('输入错误,请使用数字重新输入你的出生月份');
+        while ((!(month < 13 && month > 0)) || month == (0)) {
+            month = prompt('请使用数字修正输入你的出生月份');
+            if (month < 13 && month > 0) {
+                break
+            }
+        }
+    } else {
+        alert(' 你的出生月份录入成功');
+    }
+
+    day = prompt('请输入你的出生日期');
+    // 数据类型转换 null转化为0
+    Number(day);
+    if ((!(day < 32 && day > 0)) || day == (0)) {
+        alert('输入错误,请使用数字重新输入你的出生日期');
+        while ((!(day < 32 && day > 0)) || day == (0)) {
+            day = prompt('请使用数字修正输入你的出生日期');
+            if (day < 32 && day > 0) {
+                break
+            }
+        }
+    } else {
+        alert(' 你的出生日期录入成功');
+    }
+
+    //判断其月份及日期
+    if ((month == 3 && day >= 21) || (month == 4 && day <= 19)) {
+        alert(`你的生日是${month}月${day}日，是白羊座`);
+    } else if ((month == 4 && day >= 20) || (month == 5 && day <= 20)) {
+        alert('你是金牛座');
+    } else if ((month == 5 && day >= 21) || (month == 6 && day <= 21)) {
+        alert('你是双子座');
+    } else if ((month == 6 && day >= 22) || (month == 7 && day <= 22)) {
+        alert('你是巨蟹座');
+    } else if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) {
+        alert('你是狮子座');
+    } else if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) {
+        alert('你是处女座');
+    } else if ((month == 9 && day >= 23) || (month == 10 && day <= 23)) {
+        alert('你是天秤座');
+    } else if ((month == 10 && day >= 24) || (month == 11 && day <= 22)) {
+        alert('你是天蝎座');
+    } else if ((month == 11 && day >= 23) || (month == 12 && day <= 31)) {
+        alert('你是射手座');
+    } else if ((month == 12 && day >= 22) || (month == 1 && day <= 19)) {
+        alert('你是摩羯座');
+    } else if ((month == 1 && day >= 20) || (month == 2 && day <= 18)) {
+        alert('你是水瓶座');
+    } else if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) {
+        alert('你是双鱼座');
+    }
+
+
+</script>
+
+</html>

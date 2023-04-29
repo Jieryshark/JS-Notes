@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>表单提交</title>
+  <style>
+    .form_box {
+      width: 500px;
+      outline: 1px solid black;
+      font-size: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .table_box {
+      margin-top: 5px;
+      width: 500px;
+      outline: 1px solid black;
+      font-size: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    input {
+      margin: 15px 15px 15px 0;
+      font-size: 20px;
+    }
+
+    thead {
+      font-weight: 900;
+    }
+
+    button {
+      margin: 15px;
+    }
+
+    table {
+      /* border: 1px solid black; */
+      margin: 10px;
+      border-collapse: collapse;
+    }
+
+    td {
+      outline: 1px solid black;
+      /* border: 1px solid black; */
+      font-size: 22px;
+      padding: 3px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="form_box">
+    <form action="">
+      <label for="student_id">学号:</label>
+      <input type="text" id="student_id" placeholder="请输入学号" /><br />
+      <label for="student_name">姓名:</label>
+      <input type="text" id="student_name" placeholder="请输入姓名" /><br />
+      <label for="student_age">年龄:</label>
+      <input type="text" id="student_age" placeholder="请输入年龄" /><br />
+
+      <label for="student_sex" id="sex_value" value="">性别:</label>
+      <label for="man">男</label>
+      <input type="radio" name="sex" value="男" id="man" />
+      <label for="woman">女</label>
+      <input type="radio" name="sex" value="女" id="woman" />
+      <label for="unkown">保密</label>
+      <input type="radio" name="sex" value="保密" id="unkown" />
+    </form>
+    <button id="submit">提交</button>
+  </div>
+  <div class="table_box">
+    <table>
+      <thead>
+        <tr>
+          <td>学号</td>
+          <td>姓名</td>
+          <td>年龄</td>
+          <td>性别</td>
+          <td>操作</td>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</body>
+
+</html>
+<script>
+  //定义数据
+  //初始化学生对象数组
+  let student_info = [
+    {
+      id: "001",
+      name: "张三",
+      age: "18",
+      sex: "男",
+    },
+  ];
+  let student_id = document.querySelector("#student_id");
+  let student_name = document.querySelector("#student_name");
+  let student_age = document.querySelector("#student_age");
+  let table_tbody = document.querySelector("tbody"); //获取表格body
+  let sex_input = document.getElementsByName("sex"); //获取性别节点
+  var sex = ""; //性别值
+
+  // 循环将学生数据渲染到页面函数
+  function student_info_dcoment(start) {
+    //参数为渲染数据的开始位置
+    for (let index = start; index < student_info.length; index++) {
+      table_tbody.innerHTML += `
+          <tr class="student_tr">
+          <td>${student_info[index].id}</td>
+          <td>${student_info[index].name}</td>
+          <td>${student_info[index].sex}</td>
+          <td>${student_info[index].age}</td>
+          <td class="delete_but">删除</td>
+          </tr>`;
+    }
+  }
+  student_info_dcoment(0); //先调用一次，把模板渲染到页面
+
+  //获取性别
+  function get_sex() {
+    for (let index = 0; index < sex_input.length; index++) {
+      sex_input[index].addEventListener("change", function () {
+        sex = sex_input[index].value;
+      });
+    }
+  }
+  get_sex(); //先调用获取性别
+
+  //获取页面提交按钮节点
+  let submit_but = document.querySelector("#submit");
+  submit_but.addEventListener("click", function () {
+    //点击按钮将表单赋值给学生对象
+    //检测表单内容是否有内容
+    if (student_id.value && student_name.value && student_age.value && sex) {
+      //有内容就将值赋给学生数组
+      //将表单值存入数组
+      let obj = {
+        id: student_id.value,
+        name: student_name.value,
+        age: student_age.value,
+        sex: sex,
+      };
+      student_info.push(obj);
+      student_info_dcoment(1); // 循环将学生数据渲染到页面
+      Reset_the_form(); //重置表单
+      remove_tr(); //调用删除表格行内容
+    } else {
+      alert("请输入完整数据");
+    }
+  });
+
+  //函数封装部分
+  //重置表单
+  function Reset_the_form() {
+    student_id.value = "";
+    student_name.value = "";
+    student_age.value = "";
+    sex = "";
+    let man_input = document.querySelector("#man");
+    let woman_input = document.querySelector("#woman");
+    let unkown_input = document.querySelector("#unkown");
+    man_input.checked = false;
+    woman_input.checked = false;
+    unkown_input.checked = false;
+  }
+
+  //删除表格行内容
+  function remove_tr() {
+    let delete_but = document.querySelectorAll(".delete_but"); //查找删除按钮节点
+    let tr = document.querySelectorAll("tbody tr"); //查找tr节点
+    //循环给删除按钮添加点击事件
+    for (let index = 0; index < delete_but.length; index++) {
+      delete_but[index].addEventListener("click", function () {
+        tr[index].remove();
+      });
+    }
+  }
+</script>

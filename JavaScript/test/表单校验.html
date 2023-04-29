@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>表单校验</title>
+</head>
+<style>
+  body {
+    background-color: rgb(229, 229, 229);
+  }
+
+  .fromBox {
+    width: 600px;
+    height: 900px;
+    /* outline: 1px solid black;s */
+    box-shadow: 10px 10px 10px -10px black;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.749);
+    background-color: white;
+  }
+
+  #centerBox {
+    width: 400px;
+    height: 900px;
+  }
+
+  /* 标题 */
+  .titleH1 {
+    width: 100%;
+    line-height: 60px;
+    outline: 1px solid red;
+    text-align: center;
+  }
+
+  /* 表单主体 */
+  .inputBox {
+    text-align: right;
+    font-size: 20px;
+    display: flex;
+    align-items: stretch;
+  }
+
+  .inputBox span:last-child {
+    color: red;
+    display: inline-block;
+    position: relative;
+    top: 5px;
+  }
+
+  input {
+    font-size: 20px;
+  }
+
+  #Dropdownbox {
+    display: inline-block;
+    width: 250px;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.749);
+  }
+
+  .textRight {
+    display: inline-block;
+    width: 120px;
+    margin-right: 20px;
+  }
+
+  .WarningText {
+    color: rgba(255, 0, 0, 0.74);
+    line-height: 25px;
+    text-align: right;
+    font-size: 15px;
+    opacity: 0;
+  }
+
+  #titleH1 {
+    width: 600px;
+    line-height: 40px;
+    position: relative;
+    left: -100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.142);
+    box-shadow: 0px 13px 12px -20px black;
+  }
+
+  #personlntroduce {
+    width: 245px;
+    height: 150px;
+  }
+
+  #butBox {
+    margin-top: 20px;
+  }
+
+  #butBox button {
+    width: 60px;
+    height: 50px;
+    margin: 0 40px 0 0;
+  }
+
+  .optionsSpacing {
+    margin-right: 20px;
+  }
+</style>
+
+<body>
+  <div class="fromBox">
+    <!-- <form action="" onsubmit=""> -->
+    <div id="centerBox">
+      <div id="titleH1">
+        <h1>用户注册</h1>
+      </div>
+      <div class="WarningText">用户名只能为2~16位之间的英文,数字和下划线</div>
+      <div class="inputBox">
+        <span class="textRight"><label for="userName">用户名:</label></span>
+        <input type="text" id="userName" placeholder="请输入用户名" />
+        <span>*</span>
+      </div>
+      <div class="WarningText">
+        昵称至少输入一个字符(不包含中文)，最多12个
+      </div>
+      <div class="inputBox">
+        <span class="textRight"><label for="userNickName">昵称:</label></span>
+        <input type="text" id="userNickName" placeholder="请输入昵称" />
+        <span>*</span>
+      </div>
+      <div class="WarningText">警告文本</div>
+      <div class="inputBox">
+        <span class="textRight"><label for="passWord">密码:</label></span>
+        <input type="password" id="passWord" placeholder="请输入密码" />
+        <span>*</span>
+      </div>
+      <div class="WarningText">两次密码不相等</div>
+      <div class="inputBox">
+        <span class="textRight"><label for="passWordEnter">确认密码:</label></span>
+        <input type="password" id="passWordEnter" placeholder="请确认密码" />
+        <span>*</span>
+      </div>
+      <div class="WarningText">邮箱格式错误</div>
+      <div class="inputBox">
+        <span class="textRight"><label for="emailValue">邮箱:</label></span>
+        <input type="email" id="emailValue" placeholder="请输入邮箱" />
+        <span>*</span>
+      </div>
+      <div class="WarningText">手机号码格式错误</div>
+      <div class="inputBox">
+        <span class="textRight"><label for="phoneNumber">手机:</label></span>
+        <input type="number" id="phoneNumber" placeholder="请输入手机号" />
+        <span>*</span>
+      </div>
+      <div class="WarningText">警告文本</div>
+      <div class="inputBox">
+        <span class="textRight"><label for="">性别:</label></span>
+        <label for="unkwon">保密</label>
+        <input type="radio" name="sex" id="unkwon" value="保密" class="optionsSpacing" />
+        <label for="man">男</label>
+        <input type="radio" name="sex" id="man" value="男" class="optionsSpacing" />
+        <label for="woman">女</label>
+        <input type="radio" name="sex" id="woman" value="女" class="optionsSpacing" />
+      </div>
+      <div class="WarningText">警告文本</div>
+      <div class="inputBox">
+        <span class="textRight"><label for="">爱好:</label></span>
+        <label for="lookBook">看书</label>
+        <input type="checkbox" name="hobby" id="lookBook" value="看书" class="optionsSpacing" />
+        <label for="Movement">运动</label>
+        <input type="checkbox" name="hobby" id="Movement" value="运动" class="optionsSpacing" />
+        <label for="computer">电脑</label>
+        <input type="checkbox" name="hobby" id="computer" value="电脑" class="optionsSpacing" />
+      </div>
+      <div class="WarningText">警告文本</div>
+      <div class="inputBox">
+        <span class="textRight"><label for="">所属行业:</label></span>
+        <select name="industry" id="Dropdownbox">
+          <option value="">请选择</option>
+          <option value="餐饮">餐饮</option>
+          <option value="房地产">房地产</option>
+          <option value="IT">IT</option>
+          <option value="政府">政府</option>
+        </select>
+        <span>*</span>
+      </div>
+      <div class="WarningText">警告文本</div>
+      <div class="inputBox">
+        <span class="textRight"><label for="personPage">个人主页:</label></span>
+        <input type="text" id="personPage" placeholder="如：http://www.aulence.com" />
+      </div>
+      <div class="WarningText">警告文本</div>
+      <div class="inputBox">
+        <span class="textRight"><label for="personlntroduce">个人简介:</label></span>
+        <textarea placeholder="让大家更快认识你" name="" id="personlntroduce" cols="30" rows="10"></textarea>
+      </div>
+      <div id="butBox">
+        <span class="textRight"></span>
+        <button id="sumbit">提交</button><button id="reset">重置</button>
+      </div>
+      <!-- </form> -->
+    </div>
+  </div>
+</body>
+
+</html>
+
+<script>
+  let userData = {};
+  //获取节点
+  let userName = document.querySelector("#userName"); //用户名节点
+  let userNickName = document.querySelector("#userNickName"); //昵称节点
+  let passWord = document.querySelector("#passWord"); //密码节点
+  let passWordEnter = document.querySelector("#passWordEnter"); //确认密码节点
+  let email = document.querySelector("#emailValue"); //邮箱节点
+  let phoneNumber = document.querySelector("#phoneNumber"); //手机号节点
+  let sex = document.getElementsByName("sex"); //性别节点
+  let hobby = document.getElementsByName("hobby"); //爱好节点
+  let Dropdownbox = document.querySelector("#Dropdownbox"); //所属行业节点
+  let personPage = document.querySelector("#personPage"); //个人主页节点
+  let personlntroduce = document.querySelector("#personlntroduce"); //个人简介节点
+  let sumbit = document.querySelector("#sumbit"); //提交按钮节点
+  let reset = document.querySelector("#reset"); //重置按钮节点
+  let WarningText = document.querySelectorAll(".WarningText"); //警告文本节点
+
+  //用户名事件
+  userName.addEventListener("change", function () {
+    let userNameReg = /^[0-9a-z_]{2,16}$/g;
+    if (userNameReg.test(userName.value)) {
+      WarningText[0].style.opacity = 0;
+      userData.userName = userName.value;
+    } else {
+      WarningText[0].style.opacity = 1;
+    }
+  });
+
+  //昵称事件
+  userNickName.addEventListener("change", function () {
+    let reg = /^[\w]{2,12}$/g;
+    if (reg.test(userNickName.value)) {
+      WarningText[1].style.opacity = 0;
+      userData.userNickName = userNickName.value;
+    } else {
+      WarningText[1].style.opacity = 1;
+    }
+  });
+  //密码事件
+  passWordEnter.addEventListener("change", function () {
+    if (passWord.value === passWordEnter.value) {
+      WarningText[3].style.opacity = 0;
+      userData.passWord = passWord.value;
+    } else {
+      WarningText[3].style.opacity = 1;
+    }
+  });
+
+  //邮箱事件
+  email.addEventListener("change", function () {
+    let reg = /(\.com)$/;
+    if (reg.test(email.value)) {
+      WarningText[4].style.opacity = 0;
+      userData.email = email.value;
+    } else {
+      WarningText[4].style.opacity = 1;
+    }
+  });
+
+  //手机号事件
+  phoneNumber.addEventListener("change", function () {
+    let reg = /^[1][3456789][0-9]{9}$/g;
+    if (reg.test(phoneNumber.value)) {
+      WarningText[5].style.opacity = 0;
+      userData.phoneNumber = phoneNumber.value;
+    } else {
+      WarningText[5].style.opacity = 1;
+    }
+  });
+
+  //性别事件
+  for (let index = 0; index < sex.length; index++) {
+    sex[index].addEventListener("change", function () {
+      userData.sex = sex[index].value;
+    });
+  }
+
+  //爱好事件
+  let hobbyArr = [];
+  for (let index = 0; index < hobby.length; index++) {
+    hobby[index].addEventListener("click", function () {
+      hobbyArr.push(hobby[index].value);
+    });
+    userData.hobby = hobbyArr;
+  }
+
+  //所属行业事件
+  Dropdownbox.addEventListener("click", function () {
+    userData.industry = Dropdownbox.value;
+  });
+
+  //个人主页事件
+  personPage.addEventListener("change", function () {
+    userData.personPage = personPage.value;
+  });
+
+  //个人简介事件
+  personlntroduce.addEventListener("change", function () {
+    userData.personlntroduce = personlntroduce.value;
+  });
+
+  //提交按钮事件
+  sumbit.addEventListener("click", function () {
+    if (
+      userData.userName &&
+      userData.userNickName &&
+      userData.passWord &&
+      userData.email &&
+      userData.phoneNumber &&
+      userData.industry
+    ) {
+      location.href = "http://www.baidu.com";
+      console.log(userData);
+      localStorage.setItem("userData", JSON.stringify(userData));
+    } else {
+      alert("信息填写不完整");
+    }
+  });
+
+  //重置按钮事件
+  reset.addEventListener("click", function () {
+    phoneNumber.value = "";
+    email.value = "";
+    passWord.value = "";
+    passWordEnter.value = "";
+    userNickName.value = "";
+    userName.value = "";
+    personlntroduce.value = "";
+    personPage.value = "";
+    Dropdownbox.value = "";
+    for (let index = 0; index < sex.length; index++) {
+      sex[index].checked = false;
+    }
+    for (let index = 0; index < hobby.length; index++) {
+      hobby[index].checked = false;
+    }
+  });
+</script>

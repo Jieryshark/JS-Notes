@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 变量使用时分两步：1.声明变量 2.赋值
+    var age; // 声明一个叫age的变量
+    age = 18; //赋值 把值存入这个变量中
+    console.log(age);// 输出结果
+
+    // 变量的初始化:声明一个变量并赋值，称为变量的初始化
+    var age = 20;//声明变量同时赋值为20
+
+
+    console.log(w);
+    var w = 1; //var 值会进行覆盖，以最后为准  1.可以变量名提升 2.可以重复定义同一个变量名 3.没有作用域，为全局作用域 4.声明变量时可不必赋值
+    w = 2
+
+    let a = 1; //let 值会进行覆盖，以最后为准 1.不可变量名提升 2.不可重复定义同一个变量名 3.有独立作用域 4.声明变量时可不必赋值
+    a = 55;
+    console.log(a);
+
+    const r=20; //const 值不能进行覆盖 1.不可变量名提升 2.不可重复定义同一个变量名 3.？有独立作用域 4.声明变量时必须赋值
+    // r = 10;
+    console.log(r);
+
+    // 变量的基本语法   
+    //变量名 不要用关键字和保留字命名 不要用数字开头 大小写在js非常敏感，要注意区分大小写  
+    //驼峰命名法
+    //用户名 
+    // var userName = '张三丰'  //小驼峰命名法
+    //密码
+    // var PassWord = '123456789'  //大驼峰命名法
+    //var重复定义会将最后值的为准 var变量名提升，无值时不会报错  变量必须先声明再使用
+    // var a = 2,b=4; //同一行声明多个变量，用','隔开 
+    // a = '祝你今天愉快'
+    // console.log(a,b);
+    
+</script>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 400px;
+        height: 400px;
+        background-color: skyblue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div></div>
+    <!-- 表单 -->
+    <form action="">
+      <label for="student_id">学号:</label>
+      <input
+        type="text"
+        id="student_id"
+        onfocus="get_focus()"
+        onblur=" lost_focus(),value2()"
+        oninput="input()"
+        onchange="change()"
+      />
+      <!-- 与label标签可进行关联 取相同名字 -->
+    </form>
+  </body>
+</html>
+<script>
+  //鼠标类型
+  let div = document.querySelector("div");
+  div.addEventListener(`dblclick`, function (event) {
+    console.log("鼠标双击");
+  });
+  // 焦点类型 1.focus 2.blur
+  //表单类型  1.change 输入完内容才会触发  2.输入值变动就会触发
+  let input1 = document.getElementById("student_id");
+  /* input1.onfocus=function(){
+         console.log('获取了焦点');
+     }
+     input1.addEventListener('focus',()=>{
+         console.log('add获取了焦点');
+     }) */
+  get_focus = function () {
+    console.log(`获得焦点`);
+  };
+  lost_focus = function () {
+    console.log(`失去焦点`);
+  };
+  change = function () {
+    console.log("change事件");
+  };
+  input = function () {
+    console.log("input事件");
+  };
+  value2 = function () {
+    console.log(input1.value);
+  };
+  // console.log(student_id);
+
+  // 网络类型
+  window.ononline = function () {
+    console.log(`网络已连接`);
+  };
+  window.onoffline = function () {
+    console.log(`网络已断开`);
+  };
+
+  //键盘事件
+  /*  window.onkeydown=function(event){
+        console.log(`按下${event.key}键`,);
+    }
+    window.onkeyup=function(event){
+        console.log(`松开了${event.key}键`);
+    }
+    window.onkeypress=function(){
+        console.log(`除 Shift, Fn, CapsLock 外任意键被按住. (连续触发)`);
+    } */
+
+  //窗口事件
+  window.onresize = function () {
+    console.log(`用户调整了窗口`);
+  };
+  window.onscroll=function(){
+    console.log(`用户滚动了窗口`);
+  }
+  window.onbeforeunload=function(){
+    console.log(`用户刷新了窗口或关闭了窗口`);
+  }
+</script>

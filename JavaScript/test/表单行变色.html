@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        tbody tr:hover {
+            background-color: rgb(183, 132, 132);
+        }
+
+        tbody tr {
+            background-color: rgb(255, 255, 255);
+        }
+
+        tbody tr:nth-child(2n):hover {
+            background-color: rgba(69, 69, 178, 0.799);
+        }
+
+        tbody tr:nth-child(2n) {
+            background-color: rgba(27, 27, 27, 0.63);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <table style="background-color:rgb(172, 172, 172);margin: auto; text-align: center;">
+        <thead></thead>
+        <tbody>
+        </tbody>
+    </table>
+
+</body>
+
+</html>
+<script>
+    // 查找节点
+    let thead = document.querySelector('thead');
+    let tbody = document.querySelector('tbody');
+
+    // 渲染头部
+    thead.innerHTML = ` <tr>
+                <td>代码</td>
+                <td>名字</td>
+                <td>最新公布净值</td>
+                <td>累计净值</td>
+                <td>前单为净值</td>
+                <td>净值增长率</td>
+            </tr> `;
+
+    // 书写数据源
+    let data = [{
+        code: '1011',
+        name: '农银金穗3月定期开放债一期',
+        new_Value: 1.23,
+        sum_Value: 1.30,
+        befor_Value: 1.2021,
+        Value: 0.2151
+    }, {
+        code: '1011',
+        name: '农银金穗3月定期开放债二期',
+        new_Value: 1.23,
+        sum_Value: 1.30,
+        befor_Value: 1.2021,
+        Value: 0.2151
+    }, {
+        code: '1011',
+        name: '农银金穗3月定期开放债三期',
+        new_Value: 1.23,
+        sum_Value: 1.30,
+        befor_Value: 1.2021,
+        Value: 0.2151
+    }, {
+        code: '1011',
+        name: '农银金穗3月定期开放债四期',
+        new_Value: 1.23,
+        sum_Value: 1.30,
+        befor_Value: 1.2021,
+        Value: 0.2151
+    }];
+
+    //渲染表格
+    let data_sum = '';
+    for (let i = 0; i < data.length; i++) {
+        data_sum += ` <tr>
+                <td>${data[i].code}</td>
+                <td>${data[i].name}</td>
+                <td>${data[i].new_Value}</td>
+                <td>${data[i].sum_Value}</td>
+                <td>${data[i].befor_Value}</td>
+                <td>${data[i].Value}</td>
+            </tr> `
+    }
+    tbody.innerHTML = data_sum;
+
+
+</script>

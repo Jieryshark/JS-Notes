@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    //合并数组 1.apply 2.concat 3.es6 [...数组名,...数组名]
+    //apply  1.只能合并两个数组，把后面一个数组合并到前面一个数组，会改变原数组
+    let array1 = [1, 2, 3, 4];
+    let array2 = [5, 6, 7, 8];
+    let array3 = [9, 10, 11, 12, 13]
+    Array.prototype.push.apply(array1, array2);
+    array1.push.apply(array1, array2);//等同于Array.prototype.push.apply 个人选择后者写法*/
+    //concat 1.可以合并多个数组 2.需定义一个变量接受合并后的数组 3.不会改变原数组 4.数组位置顺序，决定合并后新数组的位置顺序
+    let value = array1.concat(array2, array3);
+    //es6 1.es6新出属性，简洁高效 2.需定义一个变量接受合并后的数组 3.不会改变原数组 4.数组位置顺序，决定合并后新数组的位置顺序
+    let value2 = [...array1, ...array2];
+
+    //截取数组元素 slice 1.不会改变原数组
+    //slice(开始位置,结束位置) 1,截取不包括结束位置 2,起始位置可以为负数 3,也可为一个参数
+    let heros1 = ['达摩', '程咬金', '猪八戒', '嫦娥', '杨玉环'];
+    let newHero = heros1.slice(2, 4);
+</script>

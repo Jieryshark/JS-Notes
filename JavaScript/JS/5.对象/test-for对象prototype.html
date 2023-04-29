@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    function Create_obj(name, age,) {
+        this.name = name;
+        this.age = age;
+        Create_obj.prototype.class = 'web前端21-1';
+        Create_obj.prototype.test_value = 100;
+    }
+    let person1 = new Create_obj('艾伦', 18);
+    let person2 = new Create_obj('阿尔敏', 17);
+
+    console.log(person1, person2);
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //switch 
+    var chengji = prompt('输入你的成绩');
+    chengji = Number(chengji);
+    switch (true) {
+        case chengji >= 90 && chengji <= 100: { alert('A'); } break;
+        case chengji >= 80 && chengji <= 89: { alert('B'); } break;
+        case chengji >= 70 && chengji <= 79: { alert('C'); } break;
+        case chengji >= 60 && chengji <= 69: { alert('D'); } break;
+        case chengji <= 59: { alert('E'); } break;
+        default: alert('数据错误，请重试') 
+    }
+
+    /*   var chengji = 89 ;
+      switch(true){
+          case chengji >=90 :{alert('优秀')} ;break;
+          case chengji >=80 && chengji <90 :{alert('良好')} ;break;
+          default:{ alert('合格')};
+      } */
+
+
+
+</script>
+
+</html>

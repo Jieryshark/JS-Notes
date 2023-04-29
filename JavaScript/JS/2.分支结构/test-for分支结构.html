@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<span>学生姓名： 詹传坤2 </span>
+</body>
+<script>
+
+    /* 
+    //用户输入成绩，返回打分
+    var chengji = prompt('输入你的成绩');
+    Number(chengji);
+    switch (true) {
+        case chengji >= 90 && chengji <= 100: { alert('A'); } break;
+        case chengji >= 80 && chengji <= 89: { alert('B'); } break;
+        case chengji >= 70 && chengji <= 79: { alert('C'); } break;
+        case chengji >= 60 && chengji <= 69: { alert('D'); } break;
+        case chengji < 59: { alert('E'); } break;
+        default: alert('数据错误，请重试')
+    } */
+
+    //判断用户是否输入字符串
+    // if else写法
+     var UserName = prompt('请输入你的名字');
+     if (UserName == Number(UserName)) {
+         alert('数据格式错误，请重新输入');
+         while (UserName == Number(UserName)) {
+             UserName = prompt('请输入你的名字');
+             if (!(UserName == Number(UserName))) {
+                 alert('录入成功');
+                 break;
+             }
+             alert('数据格式错误，请重新输入');
+         }
+     }
+     else if(UserName == String(UserName)) {
+         alert('录入成功');
+     }
+
+    // switch写法
+   /*  var userName = prompt('请输入你的名字')
+    switch (true) {
+        case userName == Number(userName): {alert('数据格式有误，请重新输入')}; break
+        case userName == String(userName): { alert('录入成功') }; break
+
+    } */
+
+   
+</script>
+
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <table>
+      <tr>
+        <td>学号:</td>
+        <td>
+          <input type="text" placeholder="请输入学号" id="pageId" />
+        </td>
+      </tr>
+      <tr>
+        <td>姓名:</td>
+        <td>
+          <input type="text" placeholder="请输入姓名" id="pageName" />
+        </td>
+      </tr>
+      <tr>
+        <td>年龄:</td>
+        <td>
+          <input type="text" placeholder="请输入年龄" id="pageAge" />
+        </td>
+      </tr>
+      <tr>
+        <!-- <td>专业:</td>
+                <td>
+                    <input type="text" placeholder="请输入专业" id="pageMajor">
+                </td> -->
+      </tr>
+      <tr>
+        <td>性别:</td>
+        <td>
+          <input name="sex" class="man" type="radio" placeholder="" value="男" id="pageSex" />男
+          <input name="sex" class="woman" type="radio" placeholder="" value="女" id="pageSex" />女
+          <input name="sex" class="unkwon" type="radio" placeholder="" value="保密" id="pageSex" />保密
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <input type="button" value="添加" id="btn" />
+          <input type="reset" id="btn1" />
+        </td>
+      </tr>
+    </table>
+    <table border="2">
+      <thead id="page">
+        <tr>
+          <td>学号</td>
+          <td>姓名</td>
+          <td>年龄</td>
+          <td>性别</td>
+          <td>操作</td>
+        </tr>
+      </thead>
+      <tbody id="showpage">
+        <!--  <tr>
+                    <td>001</td>
+                    <td>刘子</td>
+                    <td>12</td>
+                    <td>男</td>
+                    <td>删除</td>
+                </tr> -->
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>
+<script>
+  // 获取对象
+  let pageId = document.querySelector("#pageId");
+  let pageName = document.querySelector("#pageName");
+  let pageAge = document.querySelector("#pageAge");
+  // let pageSex = document.querySelector('#pageSex');
+  let pageMajor = document.querySelector("#pageMajor");
+  let btn = document.querySelector("#btn");
+
+  let newSex = document.createElement("td");
+  let man = document.querySelector(".man"); //获取性别按钮
+  let woman = document.querySelector(".woman"); //获取性别按钮
+  let unkwon = document.querySelector(".unkwon"); //获取性别按钮
+  let stu_obj = {
+    id: "",
+    name: "",
+    age: "",
+    sex: "",
+  };
+  // 查找添加的标签位置
+  let tbody = document.getElementById("showpage");
+  get_sex(); //将表单学生sex存入对象
+
+  btn.onclick = function () {
+    if (
+      pageId.value == "" ||
+      pageId.value == null ||
+      pageName.value == "" ||
+      pageName.value == null ||
+      pageAge.value == "" ||
+      pageAge.value == null
+      /* || pageSex.value == "" || pageSex.value == null */
+      /* || pageMajor.value == "" || pageMajor.value == null */
+    ) {
+      alert("请将数据填完整再添加");
+    } else {
+      stu_obj.id = pageId.value; //将表单学生id存入对象
+      stu_obj.name = pageName.value; //将表单学生name存入对象
+      stu_obj.age = pageAge.value; //将表单学生age存入对象
+      tbody.innerHTML += ` <tr class='info_cloum'>
+            <td>${stu_obj.id}</td>
+            <td>${stu_obj.name}</td>
+            <td>${stu_obj.age}</td>
+            <td>${stu_obj.sex}</td>
+            <td class='delete'>删除</td>
+          </tr> `;
+
+      /*  // 创建存储输入值的td，通过innerHTML显示
+      let newId = document.createElement("td");
+      newId.innerHTML = pageId.value;
+
+      let newName = document.createElement("td");
+      newName.innerHTML = pageName.value;
+
+      let newAge = document.createElement("td");
+      newAge.innerHTML = pageAge.value;
+
+      // let newSex = document.createElement("td");
+
+      /*  let newMajor = document.createElement('td');
+            newMajor.innerHTML = pageMajor.value; */
+      // 在tobody内添加tr
+      // let newTr = document.createElement("tr");
+      // tbody.appendChild(newTr);
+      // 通过新增的tr，将td添加到表格里
+      // newTr.appendChild(newId);
+      // newTr.appendChild(newName);
+      // newTr.appendChild(newAge);
+      // newTr.appendChild(newSex);
+      // newTr.appendChild(newMajor); */
+      // 清空输入框
+
+      //点击提交按钮后重置表单输入框内容
+      pageId.value = "";
+      pageName.value = "";
+      pageAge.value = "";
+      man.checked = false;
+      woman.checked = false;
+      unkwon.checked = false;
+    }
+  };
+  // 手动重置按钮
+  /* let reset = document.querySelector("#btn1");
+  reset.onclick = function () {
+    pageId.value = "";
+    pageName.value = "";
+    pageAge.value = "";
+    // pageSex.value = '';
+    pageMajor.value = "";
+  }; */
+
+  function get_sex() {
+    unkwon.addEventListener("change", function () {
+      stu_obj.sex = "保密";
+    });
+    woman.addEventListener("change", function () {
+      stu_obj.sex = "女";
+    });
+    man.addEventListener("change", function () {
+      stu_obj.sex = "男";
+    });
+  }
+</script>

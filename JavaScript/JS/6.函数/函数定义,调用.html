@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    //函数定义 function
+    // 1.形参与实参一一对应 2.返回值必须写在return,不写返回值调用结果为undefined 3.函数重名会以最后一个为准
+    /*    function function_sum(number1, number2) {
+           return number1 + number2
+       }
+       //函数调用 function() 1.括号里传参
+       console.log(function_sum(20, 20)); */
+    //参数作用域 1.函数里定义的参数为局部变量只可在函数内部可用 2.全局变量可在函数内部使用
+
+    //对象传参法
+    function obj_geive_value(human) {
+        console.log(`
+        姓名:${human.name}
+        性别:${human.sex}
+        `);
+    }
+    obj_geive_value({ name: '艾伦' })
+
+    // arguments 伪数组
+    let arr1 = []
+    function function_sum() {
+        for (let i = 0; i < arguments.length; i++) {
+            let element = arguments[i];
+            arr1.push(element);
+        }
+    }
+    function_sum(1, 2, 3)
+    console.log(arr1);
+
+
+    //求最大值函数
+    function function_max(number3, number4, number5) {
+        return number3 > number4 ? number3 > number5 ? number3 : number5 : number4 > number5 ? number4 : number5;
+    }
+    console.log(function_max(77, 25, 600));
+</script>

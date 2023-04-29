@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  //用法种类很多
+  //正则表达式
+  //基本用法 /pattern/flags  .test('')
+  let reg = /[0-9]/g;
+  console.log(reg.test("morning"));
+
+  let PhoneNumberReg = /^[1][3456789][0-9]{9}$/g; //检测电话号码格式
+  console.log(PhoneNumberReg.test("19385489012"));
+
+  let emailReg = /(\.com)$/;
+  console.log(emailReg.test("1520684614@qq.com"));
+
+  let userNameReg = /^[0-9a-z_]{2,16}$/g;
+  console.log("aa", userNameReg.test("kkkkkkkkk"));
+
+  let userNickNameReg = /^[a-z0-9?_@$%^&*()+-=~`! ]{2,12}$/g;
+  console.log(userNickNameReg.test("hah ()"));
+</script>

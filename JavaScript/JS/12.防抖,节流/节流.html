@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      outline: 1px solid red;
+    }
+  </style>
+  <body>
+    <div></div>
+  </body>
+</html>
+<script>
+  /* onscroll / onresize / mousemove  等是高频率触发事件*/
+  let div = document.querySelector("div");
+
+  //普通高频触发事件
+  /* div.addEventListener("mousemove", function () {
+    console.log(`高频触发事件mousemove`);
+  }); */
+
+  //高频率触发事件节流  将高频率事件设为由自己控制间隔时间触发
+  div.addEventListener("mousemove", Throttle(fn, 1000));
+  function Throttle(fn, time) {
+    let timer = null;
+    return function () {
+      if (!timer) {
+        timer = setTimeout(function () {
+          fn();
+          timer=null;//重置timer确保每次都走次函数
+        }, time);
+      }
+    };
+  }
+  function fn() {
+    console.log("我是高频率触发事件节流");
+  }
+</script>

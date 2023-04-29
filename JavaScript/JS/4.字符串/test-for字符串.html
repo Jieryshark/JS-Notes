@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    //1. 逆序输出hello
+    let str_hello = 'hello'.split('').reverse().join('');
+    console.log(str_hello);
+    // 2.删除字符串'006dg4jw74cs54jk678cg'中的数字
+    let str_number = '006dg4jw74cs54jk678cg'/*.split('')*/;//转化为数组
+    console.log(str_number.replace(/[0-9]/g, ''));
+    /*  let new_str_number = [];
+     str_number.map(
+         (itme, index) => {
+             if (isNaN(itme)) {//循环判断是否为数字
+                 new_str_number.push(itme)
+             }
+         }
+     )
+     console.log("删除字符串'006dg4jw74cs54jk678cg'中的数字为:" + new_str_number.join('')); */
+
+    // 3.将"CHINSES",转化为"Chinese"
+    let str_CHINSES = "CHINSES".split('');//转化为数组
+    str_CHINSES.map(
+        (itme, index) => {
+            if (itme != 'C') {
+                str_CHINSES[index] = str_CHINSES[index].toLowerCase();
+            }
+        }
+    )
+    console.log(`将"CHINSES",转化为"Chinese":${str_CHINSES.join('')}`);
+
+
+    // 4.统计'warrions'单词中,'r'字母出现的次数
+    let Str_warriors = 'warriors';
+   /*  filter写法
+    let filter_Str_warriors = Str_warriors.split('').filter(
+        (itme, index) => {
+            return itme == 'r';
+        }
+    )
+    console.log(filter_Str_warriors.length); */
+
+    /*去掉原字符串r,原字符串-新字符串
+     let Str_warriors_length=Str_warriors.length;
+     let R_warriors = Str_warriors.replace(/r/g,'')
+     console.log(Str_warriors_length-R_warriors.length); */
+    /*  let arr_Str_warriors = Str_warriors.split('r');
+     console.log(arr_Str_warriors.length-1); */
+    /* let count = 0;//初始化计数变量
+    for (let itme of Str_warriors) {
+        if (itme == 'r') {//循环判断r的出现次数
+            count++;
+        }
+    }
+    console.log("'warrions'单词中,'r'字母出现的次数:" + count); */
+
+    // 5.将字符串 border-bottom-color 转化为小驼峰命名 "borderBottomColor"
+    let str = 'border-bottom-color';
+    let new_str = str.replace(/-/g, "").split('');//去除-,转化为数组
+    new_str.map(
+        (itme, index) => {
+            if (index == new_str.lastIndexOf('c')) {
+                new_str.splice(index, 1, itme.toUpperCase())
+            } else if (index == new_str.lastIndexOf('b')) {
+                new_str.splice(index, 1, itme.toUpperCase())
+            }
+        }
+    )
+    console.log(`转化为小驼峰命名:${new_str.join('')}`);
+    for(let i;i<new_str.length;i++){
+        
+    }
+
+    //6.将字符串"-_-_-_-_-_-_"中的"_"替换为$
+    let _str = "-_-_-_-_-_-_";
+    let new__str = _str.replace(/_/g, '$')
+    console.log(`将字符串"-_-_-_-_-_-_"中的"_"替换为$后结果为:${new__str}`);
+
+    //7.输入身份证号,输出出生年月 输出格式为:"xxxx年xx月xx日"
+    /* let id_card=null;
+    for(let i=0;i>=0;i++){//check id_card number
+        id_card=prompt('请输入你的身份证号码')
+        if(id_card.length == 18){
+            break;
+        }else{
+            alert('身份证格式错误,请重试');
+        }
+    }
+    let arr_id_card = id_card.split('');//转化为数组
+    let year = arr_id_card.slice(6,10);//截取年份
+    let month = arr_id_card.slice(10,12);//截取月份
+    let day = arr_id_card.slice(12,14);//截取日期
+    console.log(`出生年月为:${year.join('')}年${month.join('')}月${day.join('')}日`); */
+
+    // 8.用户信息脱敏
+    /* let user_name = '';
+    for (let i = 0; i >= 0; i++){//检查用户名字格式
+        user_name = prompt('请输入你的名字');
+        if(user_name.length != 0){
+            break;
+        }
+        alert('你的名字不能为空,请重新输入');
+    }
+    let phone_number = '';
+    for (let i = 0; i >= 0; i++) {//检查用户电话号码格式
+        phone_number = prompt('请输入你的电话号码');
+        if (phone_number.length == 11 && phone_number != null) {
+            break;
+        }
+
+        alert('你的电话号码输入格式有误,请重新输入');
+    }
+    let email = '';
+    for (let i = 0; i >= 0; i++) {//检查邮箱格式
+        email = prompt('请输入你的邮箱');
+        if (!email.search('@') == -1 && email != null) {
+            break;
+        }
+        alert('你的邮箱输入格式有误,请重新输入');
+    }
+
+    //名字脱敏
+    let arr_name = user_name.split('');//转化为数组
+    if (arr_name.length == 2) {//判断其名字为两位数的话就直接敏感非第一位
+        arr_name.splice(1, 1, '*');
+    }else{
+        for (let i = 0; i < arr_name.length; i++) { //名字为非两个字走for循环
+        if (i != 0 && i != arr_name.length - 1) {//判断其第一位和最后一位不脱敏
+            arr_name.splice(i, 1, '*');
+        }
+    }
+    }
+    
+    //电话脱敏
+    let arr_phone_number = phone_number.split('');//转化为数组
+    arr_phone_number.splice(3, 4, '****');//替换中间四位为'*'
+    //邮箱脱敏
+    let arr_email = email.split('');//转化为数组
+    let index_number = arr_email.indexOf('@');//获取脱敏总个数
+    arr_email.map(
+        (itme, index) => {
+            if (index < index_number) {//判断@前替换为"*"
+                arr_email.splice(index, 1, '*');
+            }
+        }
+    )
+    console.log(arr_email);
+    console.log(`
+    名字脱敏为:${arr_name.join('')}\n
+    电话号码脱敏为:${arr_phone_number.join('')}\n
+    邮箱脱敏为:${arr_email.join('')}
+    `); */
+
+
+</script>

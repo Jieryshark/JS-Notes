@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    // 添加数组元素 1.push 2.unshift
+    let heros = ['达摩', '程咬金', '猪八戒'];
+    heros.push('嫦娥', '杨玉环');//push 是从最末端开始添加数组元素 相同点：会改变原数组
+    heros.unshift('西施', '王昭君')// unshift 是从最前端开始添加数组元素 相同点：会改变原数组
+
+    //删除数组元素 1.pop 2.shift 3.splice     都会改变原数组
+    heros.pop();//pop 删除末尾的数组元素
+    heros.shift();//shift 删除首位的数组元素
+    heros.splice(1, 3, '关羽', '张飞') //splice 1.最少可写一个参数
+    /*1.第一个参数是删除的起始位置 可为负数，代表的是从后往前 
+    2.第二个参数代表删除的总个数 不可为负数
+    3.第三个参数开始为需要添加新元素时，''，格式添加即可 添加的位置会从删除起始位置开始 
+    4.如果只写一个参数代表从该位置开始删除后面所有元素 */
+
+</script>

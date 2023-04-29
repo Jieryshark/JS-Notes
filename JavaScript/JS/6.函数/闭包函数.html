@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    //闭包
+    function bibao() {
+        var str = 'hello,world';
+        function bibao1() {
+            return str;
+        }
+        return bibao1();
+    }
+    console.log(bibao());
+
+    /* function add(num) {
+        return function () {
+            return num++;
+
+        }
+    }
+    let value = add(5)
+    console.log(value());
+    console.log(value()); */
+
+    var value = (function(){
+        var a=0;
+        return function func1(){
+            return a++;
+        }
+    })();
+    console.log(value());//0
+    console.log(value());//1
+    console.log(value());//2
+    console.log(value());//3
+</script>

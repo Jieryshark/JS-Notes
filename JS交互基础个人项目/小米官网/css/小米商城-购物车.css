@@ -1,0 +1,342 @@
+.content {
+    background-color: #fff;
+    margin: 38px auto;
+}
+
+
+/* 表头 */
+table>thead tr {
+    display: inline-block;
+    border-bottom: 0.1px solid #00000034;
+    transform: translateX(-2px);
+}
+
+table>thead td {
+    display: inline-block;
+    width: 150px;
+    line-height: 80px;
+    color: #424242;
+    font-size: 14px;
+    text-align: center;
+
+}
+
+/* 商品名字 */
+.goodsName {
+    width: 420px;
+    height: 80px;
+}
+
+.goodsName>span {
+    line-height: 80px;
+}
+
+/* 全选按钮 */
+.checkAll>input {
+    width: 18px;
+    height: 18px;
+    border: 0.1px solid rgb(118, 118, 118);
+    transform: translateY(3px) translateX(-10px);
+}
+
+/* 表体 */
+/* 小米发货 */
+.MI_Shipping td {
+    display: inline-block;
+    width: 150px;
+    line-height: 70px;
+    text-align: left;
+    margin-left: 30px;
+    font-size: 13px;
+}
+
+tbody td {
+    display: inline-block;
+    width: 150px;
+    line-height: 116px;
+    text-align: center;
+}
+
+.goodsBox_tbody_tr {
+    border-top: 0.1px solid #00000034;
+    display: inline-block;
+    border-bottom: 0.1px solid #00000034;
+
+}
+
+/* 商品按钮 */
+.checkSingle input {
+    width: 18px;
+    height: 18px;
+    border: 0.1px solid rgb(118, 118, 118);
+    transform: translateY(3px) translateX(-26px);
+}
+
+.checkSingle i {
+    position: absolute;
+    top: 49px;
+    left: 41px;
+    color: rgb(0, 0, 0);
+    z-index: -1;
+}
+
+.Tbody_goodsName {
+    width: 420px;
+    height: 80px;
+    font-size: 15px;
+    font-weight: 600;
+    color: rgb(66, 66, 66);
+    text-align: left;
+}
+
+.Tbody_goodsName>span:nth-child(2) {
+    display: inline-block;
+    margin-left: 30px;
+    transform: translateY(-35px);
+    line-height: 80px;
+    text-align: center;
+}
+
+/* 商品图片 */
+.goodsName_img {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+}
+
+.goodsName_img img {
+    width: 100%;
+}
+
+/* 商品价格 */
+.tnody_subtotal {
+    color: rgb(255, 103, 0);
+}
+
+/* 数量按钮 */
+.buttonBox {
+    display: inline-block;
+    outline: 0.1px solid #00000034;
+    width: 150px;
+    line-height: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttonBox span {
+    display: inline-block;
+    width: 30px;
+}
+
+.buttonBox button {
+    font-size: 20px;
+    border: 0;
+    width: 30px;
+    height: 30px;
+    color: rgb(66, 66, 66);
+    background-color: #fff;
+}
+
+.buttonBox button:hover {
+    font-size: 20px;
+    border: 0;
+    width: 30px;
+    height: 30px;
+    color: rgb(66, 66, 66);
+    background-color: rgba(66, 66, 66, 0.422);
+}
+
+.operation span {
+    display: inline-block;
+    width: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    transition: all 0.25s;
+
+}
+
+.operation span:hover {
+    color: white;
+    background-color: rgb(229, 57, 53);
+}
+
+
+/* 数量警告框 */
+.Quantity_warning_box_bg {
+    display: none;
+    position: fixed;
+    top: 0;
+    z-index: 11;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.379);
+}
+
+.Quantity_warning_box {
+    background-color: #fff;
+    width: 500px;
+    height: 270px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.Quantity_warning_box>div:nth-child(1) div {
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    transition: all 0.25s;
+}
+
+.Quantity_warning_box>div:nth-child(1) div:hover {
+    background-color: rgb(229, 57, 53);
+    color: white;
+}
+
+.Quantity_warning_box>div:nth-child(2) {
+    height: 190px;
+    line-height: 190px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.Quantity_warning_box>div:nth-child(3) {
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(245, 245, 245);
+}
+
+.Quantity_warning_box>div:nth-child(3) span {
+    display: inline-block;
+    width: 30%;
+    line-height: 40px;
+    text-align: center;
+    background-color: rgb(255, 103, 0);
+    color: white;
+}
+
+
+/* 删除警告框 */
+.detele_warning_box_bg {
+    display: none;
+    position: fixed;
+    top: 0;
+    z-index: 11;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.379);
+}
+
+.detele_warning_box {
+    background-color: #fff;
+    width: 500px;
+    height: 270px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.detele_warning_box>div:nth-child(1) div {
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    transition: all 0.25s;
+}
+
+.detele_warning_box>div:nth-child(1) div:hover {
+    background-color: rgb(229, 57, 53);
+    color: white;
+}
+
+.detele_warning_box>div:nth-child(2) {
+    height: 190px;
+    line-height: 190px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.detele_warning_box>div:nth-child(3) {
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(245, 245, 245);
+}
+
+.detele_warning_box>div:nth-child(3) span {
+    display: inline-block;
+    width: 30%;
+    line-height: 40px;
+    text-align: center;
+    background-color: rgb(255, 103, 0);
+    color: white;
+}
+
+
+
+/* 底部结算小窗 粘性定位 */
+.total_Price {
+    height: 50px;
+    position: sticky;
+    bottom: 0px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px -2px 15px -10px black;
+    background-color: rgb(255, 255, 255);
+}
+
+.total_Price div:first-child {
+    width: 300px;
+}
+
+.total_Price div:first-child>span {
+    line-height: 50px;
+    margin-left: 20px;
+    color: #757575;
+}
+
+.total_Price div:last-child {
+    display: flex;
+}
+
+.total_Price div:last-child>span:first-child {
+    line-height: 50px;
+    margin-right: 30px;
+    color: #ff6700;
+
+}
+
+.total_Price div:last-child>span:last-child {
+    display: inline-block;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff6700;
+    color: white;
+}
+
+#goodsNumber {
+    color: #ff6700;
+
+}
+
+#PriceSum {
+    font-size: 30px;
+    color: #ff6700;
+}
+

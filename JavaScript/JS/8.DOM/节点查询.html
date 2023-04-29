@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="school_name">四川科技职业学院互联网+学院</p>
+    <ul class="departments">
+        <!-- 各部门 -->
+        <li>教学部</li>
+        <li>教务部</li>
+        <li>市场部</li>
+        <li>咨询部</li>
+        <li>行政部</li>
+        <li>财务部</li>
+    </ul>
+    <ul class="departments">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <p name="address">四川天府新区</p>
+</body>
+
+</html>
+<script>
+    //节点查询
+    //直接查询 1.id 2.className 3.Name 4.tagName 5.querySelector 6.querySelectorAll
+    let idName = document.getElementById('school_name');//根据id查找
+    idName.innerHTML = '清华大学';
+    console.log(idName);
+    let class_departments = document.getElementsByClassName('departments');//根据类名查找
+    console.log(class_departments);
+    let address = document.getElementsByName('address');//根据name属性查找
+    console.log(address);
+    let tag_il = document.getElementsByTagName('li');//根据标签名查找
+    console.log(tag_il);
+
+    console.log(document.querySelector('#school_name'));//通过css选择器选择 只返回查询到的第一个节点
+    console.log(document.querySelector('.departments'));//通过css选择器选择
+
+    console.log(document.querySelectorAll('#school_name'));//查找出来是nodelist伪数组
+    console.log(document.querySelectorAll('.departments'));//
+
+    //间接查询 
+    //1.获取参照物节点 1).可获取元素节点，文本节点，注释节点
+    //上一节父节点查询
+    console.log(idName.parentNode);
+    //子节点查询
+    console.log(class_departments[0].childNodes);//由于class_peartments是伪数组，需通过下标访问第一个元素
+    console.log(address[0].childNodes);
+    console.log(tag_il[0].childNodes);
+    //第一个子节点查询
+    console.log(class_departments[0].firstChild);
+    //最后一个子节点查询
+    console.log(class_departments[0].lastChild);
+
+    //2.元素节点  1).只获取元素节点
+    //获取上一个兄弟元素节点
+    console.log(address[0].previousElementSibling);//获取距离他上方最近的兄弟元素节点
+    //获取下一个兄弟元素节点
+    console.log(class_departments[1].nextElementSibling);//获取距离他下方最近的兄弟元素节点
+    //获取父元素节点
+    console.log(idName.parentElement);
+    //获取第一个子元素节点
+    console.log(class_departments[0].firstElementChild);
+    //获取最后一个子元素节点
+    console.log(class_departments[0].firstElementChild);
+    //获取所有子元素
+    console.log(class_departments[0].children);
+
+    //其他查询
+    // 01. 查找文档类型
+    console.log(document.doctype);
+    // 02. 查找根节点
+    console.log(document.documentElement);
+    // 03. 查找Window对象
+    console.log(document.defaultView);
+    // 04. 查找head元素
+    console.log(document.head);
+    // 05. 查找body元素
+    console.log(document.body);
+    // 06. 查询页面中正在获取焦点的元素
+    console.log(document.activeElement);
+    // 07. 获取页面所有的<a>
+    console.log(document.links);
+    // 08. 获取页面所有的<form>
+    console.log(document.forms);
+    // 09. 获取页面所有的<img>
+    console.log(document.images);
+    // 10. 获取页面所有的<script>
+    console.log(document.scripts);
+    // 11. 获取页面所有的<link>
+    console.log(document.styleSheets);
+    // 12. 获取页面所有的<embeds>
+    console.log(document.embeds);
+    // 13. 获取/设置网页标题
+    console.log(document.title);
+
+</script>

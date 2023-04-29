@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="test('参数')">按钮</button> <!-- 3.事件写在开始标签里面，函数定义在script -->
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+</body>
+
+</html>
+<script>
+    let div = document.querySelectorAll('.box');
+    div=[...div];//转化为真数组；
+    for(let i =0;i<div.length;i++){
+        div[i].addEventListener('click',function(){alert(div[i].innerHTML); console.log(event);})
+    };
+    //1.事件添加
+    // 1).on+事件类型 1.有覆盖效果
+    let but = document.querySelector('button');
+    /* but.onclick=()=>{ 
+        console.log('1');
+        console.log('2');
+    } */
+    //2.事件监听 el.addEventListener(type, listener,false||true); false代表冒泡阶段触发 true代表捕获阶段触发   可利用冒泡进行事件代理
+    // 对同一个按钮元素执行同一个事件的不同监听函数
+    /* but.addEventListener('click',()=>{console.log('1');false});
+    but.addEventListener('click',()=>{console.log('2');false}); */
+    // 对同一个按钮元素执行同一个事件的同一个监听函数  1.)相同函数只执行一次
+    function test(value) {
+        console.log(value);
+    }/*
+    but.addEventListener('click',test,false);
+    but.addEventListener('click',test,false); */
+    // 3.事件写在开始标签里面，函数定义在script
+
+    
+
+</script>

@@ -1,0 +1,31 @@
+h1 {
+    text-align: center;
+}
+body{
+    background-color: rgb(244, 244, 244);
+}
+
+table {
+    margin: 20px auto;
+    width: 50vw;
+    text-align: center;
+
+}
+td,
+th {
+    background-color: rgb(255, 255, 255);
+    line-height: 40px;
+    border: 0.5px solid rgba(0, 0, 0, 0.142);
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px -15px rgba(0, 0, 0, 0.833);
+
+}
+#totalBox{
+    text-align: center;
+}
+.dainjiStyle{
+    background-color: rgb(219, 219, 219);
+}
+.reduceStyle{
+    cursor: not-allowed;
+}

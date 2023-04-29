@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta name="color-scheme" content="light dark">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+    <title>主页</title>
+
+</head>
+<style>
+    .myselfLogo {
+       /*  font-weight: 700;
+        font-style: italic; */
+       /*  border: 1px solid black;
+        border-radius: 5px;
+        padding: 2px;
+        line-height: 20px; */
+    }
+</style>
+
+<body>
+    <!-- <div class='frosted-glass' id='gesture-indicator'></div>
+    <div id="content">
+        <div class="search_part"><a class="logo" href="" onclick="window.via.cmd(257);" title="书签">
+            </a>
+        </div>
+    </div> -->
+    <div class="myselfLogo">Hello <br> &nbsp;&nbsp;&nbsp;&nbsp; Wrold</div>
+</body>
+
+</html>
+<script>
+    let myselfLogo = document.querySelector(".myselfLogo");
+    myselfLogo.style.cssText = ` font-weight: 700;
+        font-style: italic; 
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 2px;
+        line-height: 20px;`
+</script>
+
+<!--快捷切换搜索引擎-->
+<!-- <script>document.addEventListener("DOMContentLoaded",
+        function () {
+            var h,
+                b = document.getElementById("search_submit"),
+                c = document.createElement("select"),
+                e = [], f = search,
+                g = {
+                    i: { name: "默认", url: "" },
+                    bd: {
+                        name: "百度",
+                        url: "https://www.baidu.com/s?word="
+                    },
+                    gg: {
+                        name: "谷歌",
+                        url: "https://www.google.com/search?query="
+                    },
+                    by: {
+                        name: "必应",
+                        url: "https://cn.bing.com/search?q="
+                    },
+                    fs: {
+                        name: "F搜",
+                        url: "https://fsoufsou.com/search?q="
+                    },
+                    gk: {
+                        name: "夸克",
+                        url: "https://quark.sm.cn/s?q="
+                    },
+                    wz: {
+                        name: "无追",
+                        url: "https://www.wuzhuiso.com/s?q="
+                    },
+                    sg: {
+                        name: "搜狗",
+                        url: "https://wap.sogou.com/web/searchList.jsp?keyword="
+                    },
+                    hs: {
+                        name: "360",
+                        url: "https://www.so.com/s?q="
+                    },
+                    tt: {
+                        name: "头条",
+                        url: "https://so.toutiao.com/search?keyword="
+                    },
+                    zh: {
+                        name: "知乎",
+                        url: "https://www.zhihu.com/search?q="
+                    }
+                };
+            (c.style.color = getComputedStyle(document.getElementById("search_input")).color),
+                (c.style.float = "left"),
+                (c.style.fontSize = "50px"),
+                (c.style.height = "46px"),
+                (c.style.border = "none"),
+                (c.style.paddingLeft = "6px"),
+                (c.style.background = "transparent"),
+                (c.style.outline = "none"),
+                (c.style.borderRadius = "inherit");
+            for (h in g)
+                e.push("<option value=" + h + " " + (g[h].disabled || "") + ">" + g[h].name + "</option>");
+            (c.innerHTML = e.join("")),
+                (c.onchange = function () {
+                    var b, c;
+                    ((b = !0),
+                        (localStorage.se = this.value))
+                }),
+                (c.value = localStorage.se || "i"),
+                b.parentElement.insertBefore(c, b), (search = function () {
+                    var a =
+                        document.getElementById("search_input");
+                    return ((a.value = a.value.trim()), a.value ?
+                        ((a.value = g[c.value].url + a.value), f()) : !1);
+                });
+        });</script> -->

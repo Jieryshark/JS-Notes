@@ -1,0 +1,352 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+
+}
+.pubilcWidth{
+    width: 1226px;
+    margin: auto;
+}
+.Milogo {
+    width: 56px;
+    height: 56px;
+}
+
+.Milogo img {
+    width: 100%;
+}
+
+/* 头部 */
+.headbgc {
+    width: 100vw;
+    /* background-color: rgba(0, 0, 0, 0.85); */
+    position: fixed;
+    top: 0px;
+    transition: all 0.25s;
+    z-index: 100;
+}
+.headbgc a{
+    color: white;
+}
+
+.head {
+    width: 85vw;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.MIlogo {
+    width: 35px;
+    height: 35px;
+}
+
+.MIlogo img {
+    width: 100%;
+}
+
+.head_links,
+.login {
+    display: flex;
+    color: white;
+}
+
+.head_links>div,
+.login>div {
+    margin-right: 20px;
+    font-size: 14px;
+    line-height: 65px;
+}
+
+#xiaomi_officialWebsite {
+    color: rgb(252, 104, 0);
+}
+
+.head_links>div:hover a,
+.login>div:hover a {
+    color: rgb(252, 104, 0);
+}
+
+
+/* 版心内容 */
+.container_img img {
+    width: 100%;
+}
+
+.container_img {
+    /* height: 713px; */
+    /* width: 100vw; */
+    margin: auto;
+    margin-bottom: 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+.lunbotu {
+    height: 713px;
+    width: 100vw;
+    position: relative;
+}
+
+.lunbotu img {
+    width: 100%;
+}
+
+.xiaomi13 {
+    width: 370px;
+    height: 50px;
+    position: absolute;
+    top: 440px;
+    left: 360px;
+}
+
+/* 分页器 */
+
+.swiper {
+    --swiper-navigation-color: rgb(184, 184, 184);
+    --swiper-navigation-size: 30px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    margin: 0px 20px;
+}
+
+.swiper-button-prev {
+    left: 0px;
+}
+
+
+
+.swiper-pagination .swiper-pagination-bullet {
+    width: 50px;
+    height: 3px;
+    border-radius: 0px;
+    background-color: rgb(184, 184, 184);
+
+}
+
+.swiper-pagination .swiper-pagination-bullet-active {
+    background-color: rgb(252, 104, 0);
+}
+
+/* 徕卡视频 */
+.video_laika{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+.video_laika>div{
+    font-size: 30px;
+    text-align: right;
+    color: white;
+}
+.palyVideo{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 80px;
+    height: 80px;
+    outline: 1px solid rgba(255, 255, 255, 0.737);
+    background-color: rgba(255, 255, 255, 0.242);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.palyVideo svg{
+    fill: white;
+}
+.palyVideo:hover{
+    background-color: rgb(252, 104, 0);
+    outline: 1px solid rgb(252, 104, 0);
+}
+.bodyShadow{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.532);
+    position: fixed;
+    top: 0px;
+    z-index: 6000;
+}
+
+.doubleImg{
+    display: flex;
+    height: 446px;
+    position: relative;
+    z-index: 10;
+    margin-bottom: 20px;
+}
+.doubleImg>div{
+    width: 50%;
+    height: 100%;
+}
+.doubleImg>div img{
+    height: 100%;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 底部 */
+.footerBgc {
+    background-color: #fff;
+}
+
+.footer {
+    padding-bottom: 60px;
+}
+
+.footer_service {
+    height: 90px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.footer_service span {
+    display: inline-block;
+    color: #616161;
+    line-height: 30px;
+    width: 244px;
+    text-align: center;
+    font-size: 20px;
+
+}
+
+.footer_service span:not(.frist_footer_service) {
+    border-left: 1px solid #e0e0e0;
+}
+
+.footer_service a {
+    text-decoration: none;
+    color: #616161;
+}
+
+.footer_service>span:hover,
+.footer_service>span a:hover {
+    text-decoration: none;
+    color: rgb(255, 106, 0);
+
+}
+
+#zhanwei {
+    height: 25px;
+}
+
+.footer_links {
+    margin-top: 50px;
+    display: flex;
+}
+
+.footer_links>div:not(#phone) {
+    width: 160px;
+    color: #616161;
+}
+
+.footer_links ul {
+    margin-bottom: 20px;
+}
+
+.footer_links dd {
+    margin-bottom: 10px;
+    font-size: 10px;
+}
+
+.footer_links dd a:hover {
+    color: rgb(255, 106, 0);
+}
+
+#phone {
+    width: 245px;
+    height: 80px;
+    position: relative;
+    left: 20px;
+    border-left: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+#phone p:first-child {
+    color: #ff6700;
+    font-size: 22px;
+}
+
+#phone p:nth-child(2) {
+    font-size: 12px;
+}
+
+#phone a {
+    border: 1px solid #ff6700;
+    width: 118px;
+    height: 28px;
+    font-size: 12px;
+    line-height: 28px;
+    padding: 3px 30px;
+    color: #ff6700;
+}
+
+#phone a:hover {
+    background-color: #ff6700;
+    color: aliceblue;
+}
+
+
+/* 底部2 */
+.footer2Bgc {
+    background-color: rgb(250, 250, 250);
+}
+
+.container {
+    padding-top: 50px;
+}
+
+.container_text {
+    padding-left: 77px;
+    font-size: 12px;
+    color: #616161;
+
+}
+
+.container_text a:hover {
+    color: #ff6700;
+
+}
+
+.container>.Milogo {
+    position: absolute;
+}
+
+.container_links {
+    padding-left: 77px;
+    height: 28px;
+}
+
+.container_links img {
+    height: 100%;
+}
+
+.container>div:last-child {
+    padding: 30px 0;
+    text-align: center;
+    font-size: 12px;
+    color: #ffffff00;
+
+}

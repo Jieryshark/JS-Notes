@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .head {
+        background-color: brown;
+        color: white;
+    }
+
+    .head>span {
+        display: inline-block;
+        transition: all 0.25s;
+    }
+
+    .head:hover span:nth-child(1) {
+        text-decoration: underline;
+    }
+
+    .head:hover span:nth-child(2) {
+        transform: translateX(10px);
+    }
+
+    .img_w {
+        width: 500px;
+    }
+
+    .one_clomunText {
+        width: 250px;
+    }
+
+    .blue_buttonBox {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: space-between;
+        width: 500px;
+        height: 80px;
+    }
+
+    .blue_buttonBox>div {
+        width: 240px;
+        background-color: rgb(0, 120, 212);
+        line-height: 35px;
+        text-align: center;
+        color: white;
+        font-weight: 500;
+    }
+</style>
+
+<body>
+    <div class="head">
+        <span>
+            Surface 精选平板二合一与笔记本电脑年终大促。前往折扣专区。
+        </span>
+        <span>></span>
+    </div>
+
+
+    <div class="publicWidth">
+        <!-- 第一个图标 -->
+        <div>
+            <!-- 图片 -->
+            <div><img src="" alt=""></div>
+            <!-- 文字 -->
+            <span></span>
+        </div>
+        <!-- 第二个图标 -->
+        <div>
+            <!-- 图片 -->
+            <div><img src="" alt=""></div>
+            <!-- 文字 -->
+            <span></span>
+        </div>
+        <!-- 第三个图标 -->
+        <div>
+            <!-- 图片 -->
+            <div><img src="" alt=""></div>
+            <!-- 文字 -->
+            <span></span>
+        </div>
+        <!-- 第四个图标 -->
+        <div>
+            <!-- 图片 -->
+            <div><img src="" alt=""></div>
+            <!-- 文字 -->
+            <span></span>
+        </div>
+        <!-- 第五个图标 -->
+        <div>
+            <!-- 图片 -->
+            <div><img src="" alt=""></div>
+            <!-- 文字 -->
+            <span></span>
+        </div>
+    </div>
+
+
+    <!-- 背景图文字 -->
+    <div class="img_w">
+        <div>
+            <h1 class="one_clomunText">Office&nbsp; 将变更为&nbsp; Microsoft &nbsp;365</h1>
+        </div>
+        <div>
+            <h1>一站式使用 &nbsp; Microsoft&nbsp; Teams、Word、Excel、PowerPoint &nbsp; 等更多应用，提升工作效率。</h1>
+        </div>
+        <div class="blue_buttonBox">
+            <div>个人版和家庭版</div>
+            <div>商业版</div>
+            <div>企业版</div>
+            <div>教育版</div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>分页器</title>
+  <style>
+    button {
+      font-size: 18px;
+      margin: 0 10px 0 10px;
+      border-radius: 5px;
+      border: 0.5px;
+      transition: all 0.5s linear;
+
+    }
+
+    #content {
+      outline: 1px solid black;
+      width: 1600px;
+      height: 200px;
+      margin: auto;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    #content div {
+      width: 1200px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border-radius: 5px;
+      background-color: skyblue;
+      outline: 1px solid black;
+    }
+
+    #but_box {
+      outline: 1px solid black;
+      width: 1600px;
+      height: 50px;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .but_inline {
+      display: inline-block;
+    }
+
+    .style_but {
+      background-color: rgb(120, 120, 120);
+    }
+
+    .style_down_but {
+      animation: down_but 0.5s linear;
+    }
+
+    .style_up_but {
+      animation: up_but 0.5s linear;
+    }
+
+    @keyframes up_but {
+      0% {}
+
+      50% {
+        background-color: rgb(120, 120, 120);
+      }
+
+      100% {}
+    }
+
+    @keyframes down_but {
+      0% {}
+
+      50% {
+        background-color: rgb(120, 120, 120);
+      }
+
+      100% {}
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 展示内容 -->
+  <div id="content"></div>
+  <!-- 底部分页器 -->
+  <div id="but_box">
+    <button onclick="up_page()" id="up_but">上一页</button>
+    <div class="but_inline"></div>
+    <button onclick="down_page()" id="down_but">下一页</button>
+  </div>
+</body>
+
+</html>
+<script>
+  //初始数据定义
+  let data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+  let pageSzie = 3; //每页展示的数据条数
+  var now_pag = 1; //当前页面
+  let but_Num = Math.ceil(data.length / pageSzie); //button的个数
+  let but = document.querySelector(".but_inline"); //获取底部按钮节点
+
+  //渲染底部按钮
+  function get_Buttom_but() {
+    let but_Sum = ""; //初始化按钮值
+    for (let i = 1; i <= but_Num; i++) {
+      but_Sum += `<button>${i}</button>`;
+    }
+    but.innerHTML = but_Sum;
+  }
+  get_Buttom_but();
+
+  //渲染主体内容
+  function get_M_content() {
+    let show_Content = document.querySelector("#content"); //获取主体内容节点
+    let show_Content_sum = ""; //初始化主体内容变量
+    //返回每页展示的内容
+    function get_content_data() {
+      return data.slice(pageSzie * (now_pag - 1), pageSzie * now_pag);
+    }
+    let show_content_arr = get_content_data(); //将每页展示内容赋值到一个数组
+    // 将展示内容循环累加赋值到主体内容变量
+    show_content_arr.map((itme, index) => {
+      show_Content_sum += `<div>${show_content_arr[index]}</div>`;
+    });
+    show_Content.innerHTML = show_Content_sum; //将主体内容输出到页面
+  }
+  get_M_content();
+
+  // 点击按钮事件
+  let but_Sum = document.querySelectorAll(".but_inline button"); //查找所有按钮节点
+  but_Sum = [...but_Sum]; //将按钮集合转化为真数组
+  for (let i = 0; i < but_Sum.length; i++) {
+    //循环添加按钮点击事件
+    but_Sum[i].onclick = function () {
+      now_pag = i + 1; //点击后确定当前页码
+      pitch_on_color(); //点击选中变色
+      get_M_content(); //点击获取中间内容
+    };
+  }
+
+  //上下一页函数
+  function down_page() {
+    if (now_pag < but_Num) {
+      now_pag++;
+    }
+    get_M_content(); //点击获取中间内容
+    pitch_on_color(); //点击选中变色
+    let down_but = document.querySelector("#down_but");
+    down_but.classList.toggle("style_down_but");
+  }
+  function up_page() {
+    if (now_pag > 1) {
+      now_pag--;
+    }
+    get_M_content(); //点击获取中间内容
+    pitch_on_color(); //点击选中变色
+    let down_but = document.querySelector("#up_but");
+    down_but.classList.toggle("style_up_but");
+  }
+
+  //选中变色
+  function pitch_on_color() {
+    //循环每一个button按钮,如果当前页面等于button 就进行选中变色，否则不变色
+    for (let index = 0; index < but_Sum.length; index++) {
+      if (now_pag == index + 1) {
+        but_Sum[index].classList.add("style_but");
+        console.log(now_pag);
+      } else {
+        but_Sum[index].classList.remove("style_but");
+      }
+    }
+  }
+  pitch_on_color();
+</script>

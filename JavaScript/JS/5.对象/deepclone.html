@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    let obj1 = {
+        name: '三笠',
+        sex: 'woman',
+        hobby: ['runing', 'sleep'],
+        lover: {
+            name: '艾伦',
+            age: 18
+        }
+    }
+    function deepclone(obj) {
+        if (typeof (obj) != "object") {
+            return obj;
+        }
+        let result;
+        Array.isArray(obj) ? result = [] : result = {};
+        for (let key in obj) {
+            result[key] = deepclone(obj[key]);
+        }
+        return result;
+    }
+    let deep_obj1 = deepclone(obj1);
+    deep_obj1.name = '希斯特里亚';
+    deep_obj1.hobby[0] = 'sing';
+    deep_obj1.lover.name = '尤米尔';
+    console.log(obj1);
+    console.log(deep_obj1);
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    //二维数组 1.双重循环获取二维数组的值
+    let sum = 0;
+    let arr = [1, 66,'哈哈',
+        [1, 2, 3],
+        [4, 5, 6],
+        [1, 3, 5, 7, 8, 4]
+    ]
+    //第一层循环获取外面第一层数组元素
+    for (let itme of arr) {
+        if (Array.isArray(itme)) {
+            //第二层循环获取数组内=>数组的数组元素
+            for (let itme_son of itme) {
+                sum += itme_son;
+            }
+        } else if(!isNaN(itme)) {
+            sum += itme;
+        }
+    }
+    console.log(sum);
+</script>

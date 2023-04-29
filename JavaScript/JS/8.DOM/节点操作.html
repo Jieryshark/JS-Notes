@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <a href="http://www.baidu.com" target="_top">百度一下</a>
+    <div>我是原本的位置</div>
+</body>
+
+</html>
+<script>
+    //操作属性
+    // 1.属性查找 value可以拿到具体的值 不推荐使用value
+    let a_name = document.querySelector('a');
+    console.log(a_name.attributes[1].name);
+    // 2.修改属性  ('属性名','属性值')
+    a_name.setAttribute('target', '_blank');//修改a标签的target值为_blank
+    //3.获取属性
+    console.log(a_name.getAttribute('target'));
+    //4.判断指定属性是否存在
+    console.log(a_name.hasAttribute('href'));//返回true
+    //5.移除指定属性
+    a_name.removeAttribute('href');//删除了href
+    console.log(a_name.hasAttribute('href'));//返回false
+    //6.添加自定义属性
+    a_name.dataset.desc = '博客地址';
+    console.log(a_name);
+
+    // 操作类名
+    // 1. 通过classname操作类名 *
+    // - 设置类名
+    a_name.className = "link";
+    a_name.className = "link blog";
+    // - 访问类名
+    a_name.className;
+    // - 移除类名
+    a_name.className = "";
+    //2.设置属性
+    a_name.setAttribute('class', 'link blog')  //这两种方式原有类名将被替换
+
+    // 3. 通过classList操作类名 
+    // - 添加类名 * 
+    a_name.classList.add("link");
+    console.log(a_name);
+    a_name.classList.add("flag");
+    //也可以一次添加多个类名 中间用','隔开
+    a_name.classList.add("link", "flag");
+    // - 移除类名 * (可多个)
+    a_name.classList.remove("flag");
+    // - 查询是否包含某个类名 *
+    a_name.classList.contains("link"); // true
+    //切换类名，如果该元素存在red这个class这删除，否则添加red
+    a_name.classList.toggle('red')
+    // - 查询指定位置的类名
+    a_name.classList.item(0);
+    // - 将类名集合转为字符串
+    a_name.classList.toString();
+
+    // 4.操作内容 1.textContent 2.innerText 3.innerHTML  只有innerHTML可识别标签
+    a_name.textContent = 'google';
+    a_name.innerText = 'yahoo';//不能识别标签
+    a_name.innerHTML = '<h1>360</h1>';//可识别标签
+    console.log(a_name.textContent);
+
+    // 5.插入节点
+    let body1 = document.getElementsByTagName('body')[0];
+    let inset1 = document.createElement('h1');
+    let div = document.querySelector('div');
+    inset1.innerHTML = '插入';
+    // 1. 在指定元素内追加(后面) 一般配合createElement()方法创建的节点然后添加到指定位置
+    //该方法可以从已有的节点中提取出来添加到新的位置 视图会刷新
+    body1.appendChild(inset1);
+    //可以指定插入的子节点位置
+    body1.append(inset1);
+    // 2. 在指定元素内追加(前面)
+    div.prepend(inset1);
+    // 3. 在指定元素前加入 
+    div.before(inset1);
+    // 4. 在指定元素后加入
+    div.after(inset1);
+
+    //6.操作样式
+    // 1.单一赋值
+    div.style.color = 'red';
+    div.style.fontSize = '30px';
+    div.style.fontWeight = '500';
+    div.style.backgroundColor = 'red'
+    // 2.统一复制
+    // div.style.cssText='color:pink;font-Size:50px;letter-spacing:60px;font-style: italic; ';
+
+    // 7.替换节点
+    //主动替换
+    // a_name.replaceWith(inset1);
+    //被动替换
+    // parent.replaceChild(body1,inset1)??
+
+    // 8、移除节点
+    // 主动移除
+    // div.remove();
+    // 被动移除
+    // parent.removeChild(div)??
+
+
+</script>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    //数组和对象都是引用型数据，都会有深拷贝和浅拷贝的情况
+    //浅拷贝 一变都变
+    let obj = {
+        name: 'andy',
+        hobby: ['raeding', 'sleep'],
+        info: { id: 1011, score: 98 }
+    }
+    let arry = [
+        {
+            name: 'mikasa',
+            sex: 'man'
+        }
+    ]
+    let copy_arry = [...arry];
+    copy_arry[0].name = 'xxxx'
+    console.log(copy_arry, arry);
+    //第一种 =
+    /* let copy_obj=obj;
+    copy_obj.name='tom'; */
+    //第二种 ... es6扩展运算符  可深拷贝可浅拷贝，但是此深拷贝只生效于简单数据类型，一般只作为浅拷贝使用
+    let copy_obj = { ...obj };
+    copy_obj.name = 'tom';
+    console.log(obj);
+    console.log(copy_obj);
+    //第三种 slice 截取 用法见数组章节
+
+    //第四种 Object.assign 可深拷贝可浅拷贝，但是此深拷贝只生效于简单数据类型，一般只作为浅拷贝使用
+    let arr = {};
+    Object.assign(arr, obj);
+    arr.name = '利维';
+    console.log(arr, obj);
+
+
+    //深拷贝 一边不变
+    // 1.JSON.parse(JSON.stringify()) 嵌套较多容易深拷贝不成功
+    let obj1 = {
+        name: '三笠',
+        age: 18,
+        hobby: ['艾伦', '揍利维', {
+            id: 1111
+        }],
+        info: {
+            height: 170,
+            lover: '艾伦'
+        }
+    };
+    /*  let deep1=JSON.parse(JSON.stringify(obj1));
+     obj1.name='希斯特里亚';
+     obj1.hobby[0]='尤米尔';
+     console.log(obj1,deep1); */
+
+    //2.递归 
+    function deepclone(obj) {
+        //基本数据类型
+        if (typeof (obj) != 'object') {
+            return obj;
+        }
+        //引用数据类型
+        let result;
+        if (Array.isArray(obj)) {
+            result = [];
+        } else {
+            result = {};
+        }
+        for (let key in obj) {
+            result[key] = deepclone(obj[key]);
+        }
+        return result;
+    }
+   /*  let deep2 = deepclone(obj1);
+    obj1.name = '希斯特里亚';
+    obj1.hobby[0] = '尤米尔';
+    obj1.hobby[2].id=222;
+    console.log(deep2, obj1); */
+
+    // 3.extend
+
+</script>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .empty {
+        width: 400px;
+        height: 400px;
+        outline: 1px solid red;
+    }
+
+    img {
+        width: 200px;
+    }
+</style>
+
+<body>
+    <p></p>
+    <div class="empty"></div>
+    <hr>
+    <img src="./1.jpg" alt="图1" draggable="true">
+</body>
+
+</html>
+<script>
+    let name;
+    // 被放进的区域
+    let empty = document.querySelector('.empty');
+    let p = document.querySelector('p');
+    // 第一步 拖动开始前
+    document.addEventListener('dragstart', function (event) {
+        name = event.target.alt
+        p.innerHTML = name;
+        console.log('拖动开始前');
+    })
+
+
+    // 第一步 拖动开始中
+    document.addEventListener('drag', function (e) {
+        e.target.style.border = '2px dashed red';
+        empty.style.border = '2px dashed red';
+    });
+    // 第三步  拖动开始进入  当拖拽元素进入empty元素
+    empty.addEventListener('dragenter', function () {
+        p.style.color = 'red';
+
+    });
+    /* 当拖拽元素放置时需要将这个图片放置到empty元素里面，也就是用appendChild将img加入元素中，drop事件跟dragover事件都调用了preventDefault事件来阻止默认事件的发送，那是因为浏览器默认不能在拖拽以后进行放置，所以需要我们手动的取消默认事件。 */
+
+    empty.addEventListener('dragover', function (e) {
+        e.preventDefault();
+
+    })
+    empty.addEventListener('drop', function (e) {
+        // e.preventDefault();
+        let img = document.querySelector('img')
+        console.log(img);
+        e.target.appendChild(document.querySelector('img'))
+    })
+</script>

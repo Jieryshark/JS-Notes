@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+</body>
+</html>
+<script>
+    //数组与字符串  相互转换
+    //数组转字符串 join('转换的方式') 1.不会改变原数组 2.括号里的值会作为元素间的拼接符号
+    let arr3 = [1, 2, 3]
+    let arr3_str = arr3.join('|');
+    console.log(arr3_str);
+    let new_arr3_str = arr3_str.split('|')
+    console.log(new_arr3_str);
+    //字符串转数组 spilt('转换的方式') 1.不会改变原数组 2.括号里无值会以逗号隔开，取值为字符串里包含的，已该值为界限分割
+    let str = 'abcd'
+    let str_arr = str.split('b')
+    console.log(str_arr);
+</script>

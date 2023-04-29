@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    body {
+      background-color: rgb(242, 241, 239);
+    }
+
+    /* 公共属性 */
+    .public_sty {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 90vw;
+      margin: 50px auto;
+    }
+
+    #bgcBox {
+      width: 96vw;
+      position: absolute;
+      z-index: -1;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 90vh;
+      background-color: rgb(169, 169, 169);
+      border-radius: 25px;
+      box-shadow: 0px 50px 30px -29px rgb(90, 90, 90);
+    }
+
+    .public_sty_sondiv {
+      font-weight: 400;
+      height: 2vh;
+      width: 10vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 25px;
+      font-size: 28px;
+      padding: 20px;
+      color: rgb(50, 50, 50);
+      background-color: rgb(181, 197, 196);
+      margin: 10px;
+    }
+
+    .nameBox {
+      margin-top: 40px;
+      outline: 1px solid rgba(0, 0, 0, 0.217);
+      border-radius: 25px;
+      background-color: rgb(217, 215, 216);
+      flex-wrap: wrap;
+      justify-content: space-between;
+      transition: all 0.2s linear;
+      box-shadow: 0px 4px 40px 0px rgba(167, 167, 167, 0.689);
+    }
+
+    .showNamebox {
+      box-shadow: 0px 50px 30px -29px rgb(139, 139, 139);
+      border-radius: 0 0 25px 25px;
+      background-color: rgb(181, 197, 196);
+
+    }
+
+    .showNamebox div {
+      box-shadow: 0px 4px 40px 0px rgba(120, 120, 120, 0.174);
+      background-color: rgba(255, 255, 255, 0.685);
+
+    }
+
+
+    .butBox button {
+      border: none;
+      height: 6vh;
+      font-size: 28px;
+      width: 250px;
+      margin: 30px;
+      box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.174);
+
+    }
+
+    .butani {
+      animation: buttonAni 0.25s linear;
+      background-color: rgba(255, 255, 255, 0.685);
+      transform: scale(0.95);
+      transition: all 0.5s linear;
+
+    }
+
+    @keyframes buttonAni {
+      50% {
+        transform: scale(0.85);
+      }
+    }
+
+    .TransitionAni {
+      animation: TransitionAni 0.15s linear;
+    }
+
+    .lastTransitionAni {
+      background-color: rgba(255, 255, 255, 0.685);
+      color: rgb(40, 40, 40);
+    }
+
+    @keyframes TransitionAni {
+      100% {
+        background-color: rgba(255, 255, 255, 0.685);
+        color: rgb(40, 40, 40);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="bgcBox"></div>
+  <div class="public_sty showNamebox">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="nameBox public_sty"></div>
+  <div class="butBox public_sty">
+    <button>随机一个名字</button>
+    <button>随机二个名字</button>
+    <button>随机三个名字</button>
+  </div>
+</body>
+<script>
+  //定义名字数组
+  let name_arr = [
+    "艾伦",
+    "三笠",
+    "阿尔敏",
+    "约翰",
+    "科尼",
+    "纱夏",
+    "莱纳",
+    "小贝",
+    "阿尼",
+    "马尔科",
+    "希斯特里亚",
+    "尤米尔",
+    "利维",
+    "艾尔文",
+    "莫布里特",
+    "韩吉",
+    "米可",
+    "里柯",
+    "佩特拉",
+    "汉尼斯",
+    "拿纳巴",
+    "夏迪斯",
+    "汉娜",
+    "吉克",
+    "皮克",
+    "波克",
+    "法尔克",
+    "贾碧",
+    "弗洛克",
+    "尼科洛",
+    "格里莎",
+    "肯尼",
+    "欧鲁",
+    "埃德尔",
+    "伊雷娜",
+    "维利",
+    "匹希斯",
+    "马尔洛",
+    "奈尔",
+  ];
+
+  //获取元素
+  let nameBox = document.querySelector(".nameBox");
+  let butBox = document.querySelector(".butBox");
+  let showNamebox = document.querySelector(".showNamebox");
+  let AllName = nameBox.children; //获取全部名字元素
+  let AllBut = butBox.children; //获取全部按钮元素
+  let AllshowNamebox = showNamebox.children; //获取全部展示名字元素
+  //渲染全部名字到文档
+  let AllNameString = "";
+  for (let i = 0; i < name_arr.length; i++) {
+    AllNameString += ` <div>${name_arr[i]}</div>`;
+  }
+  nameBox.innerHTML = AllNameString;
+
+  //将页面css统一样式
+  function elment_style() {
+    //将所有名字元素添加类名用于统一添加css格式
+    for (let i = 0; i < AllName.length; i++) {
+      AllName[i].classList.add("public_sty_sondiv");
+    }
+
+    //将所有按钮元素添加类名用于统一添加css格式
+    for (let i = 0; i < AllBut.length; i++) {
+      AllBut[i].classList.add("public_sty_sondiv");
+    }
+
+    //将展示名字元素添加类名用于统一添加css格式
+    for (let i = 0; i < AllshowNamebox.length; i++) {
+      AllshowNamebox[i].classList.add("public_sty_sondiv");
+    }
+  }
+  elment_style(); //自调用
+
+  //公共函数
+  //二次点击时清除前一次保存的内容
+  function clearLatstime_content() {
+    for (let index = 0; index < AllshowNamebox.length; index++) {
+      AllshowNamebox[index].innerHTML = "";
+      AllshowNamebox[index].classList.remove("lastTransitionAni");
+    }
+    for (let index = 0; index < name_arr.length; index++) {
+      AllName[index].classList.remove("lastTransitionAni");
+      AllName[index].classList.remove("TransitionAni");
+    }
+  }
+
+  // 返回随机数
+  function rand(value1, value2) {
+    if (value1 > value2) {
+      (max = value1), (min = value2);
+    } else {
+      (max = value2), (min = value1);
+    }
+    let rand = Math.floor(Math.random() * (max - min) + min);
+    return rand;
+  }
+
+  //获取名字
+  function getName(count) {
+    for (let i = 0; i <= count; i++) {
+      let randNumber = rand(0, name_arr.length);
+      AllshowNamebox[i].innerHTML = name_arr[randNumber];
+      AllName[randNumber].classList.add("lastTransitionAni");
+      AllshowNamebox[i].classList.add("lastTransitionAni");
+    }
+  }
+
+  //过渡动画
+  function Transition_animation() {
+    var setinterval_A = setInterval(() => {
+      AllName[rand(0, name_arr.length)].classList.add("TransitionAni");
+    }, 25);
+    setTimeout(() => {
+      clearInterval(setinterval_A);
+    }, 1005);
+  }
+
+  //循环添加AllBut点击事件
+  for (let index = 0; index < AllBut.length; index++) {
+    AllBut[index].addEventListener("click", function () {
+      //二次点击时清除前一次保存的内容
+      clearLatstime_content();
+      //延时两秒后获取名字
+      setTimeout(() => {
+        getName(index);
+      }, 1000);
+      //过渡动画持续两秒
+      Transition_animation();
+      // AllBut[index].classList.toggle("butani");
+
+
+      for (let i = 0; i < AllBut.length; i++) {
+        if (i == index) {
+          AllBut[i].classList.add('butani');
+        } else {
+          AllBut[i].classList.remove('butani',);
+        }
+      }
+
+    });
+  }
+</script>
+
+</html>

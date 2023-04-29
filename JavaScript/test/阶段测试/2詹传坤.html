@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    // 1.数据额类型可分为什么？每一种类型要举例子，Number()值为0的情况有哪些？
+    let string1 = '你好';
+    let number1 = 12;
+    let arry = [2, '你好', 6];
+    let obj = {
+        name: '三笠',
+        sex: '女',
+        age: '18',
+    }
+    let bool = true;
+    console.log(Number(false));
+    console.log(Number( ));
+    console.log(Number([]));
+    console.log(Number(''));
+    console.log(Number(null));
+    console.log(Number(0));
+
+    // 3.打印九九乘法表
+    document.write('第三题<br>')
+    for (let i = 1; i < 10; i++) {
+        for (let j = 1; j < i + 1; j++) {
+            document.write(`${j}*${i}=${i * j}  `)
+        }
+        document.write('<br>')
+    }
+    //5.求s=a+aa+aaa+aaaa+aa...a的值，其中a是一个数字。例如2+22+222+2222+22222
+    function count_sum(value1, value2) {
+        let sum = 0;//定义和变量初始化
+        let count = value1;//将初始值赋给累计增加变量
+        for (let i = 0; i < value2; i++) {
+            sum += count;
+            count = count * 10 + value1;//累计变量每次运算完后自增
+        }
+        return sum
+    }
+    console.log('第五题', count_sum(2, 2));
+
+    //7.定义两个变量x,y,分别随机给xy赋值.（1）打印最大的数字（2）把xy的值调换
+    let x = 20;
+    let y = 150;
+    let z = 0;
+    x > y ? console.log('最大值', x) : console.log('最大值', y);//判断大小
+    z = x;
+    x = y;
+    y = z;
+    console.log('第七题', 'x:', x, 'y:', y);
+
+    //9. 统计 ”warriors” 单词中，“r“字母出现的次数
+    let srt = 'warriors'.split('');
+    let count = 0;
+    srt.map(
+        (itme) => {
+            if (itme == 'r') {
+                count++;
+            }
+        }
+    )
+    console.log('第九题', 'r出现的次数为:', count);
+
+    //11.随机输入一个字符串，生成一个新的倒序字符串，使用数组方式。如输入'hello',生成'olleh'
+    // let str1=prompt('随机输入一个字符串').split('').reverse().join('');
+    // console.log('第十一题',str1);
+
+    //13.定义一个数组，随机获取20个0~100的整数，要求如下（结果要取四舍五入）：(1).计算最大值、最小值 (2).计算数组元素之和、平均值
+    // 获取随机数函数
+    function give_round(max, min) {
+        return Math.ceil(Math.random() * (max - min) + min)
+    }
+    let arry1 = [];
+    for (let i = 0; i < 20; i++) {//获取二十个随机数组元素的数组
+        arry1[i] = give_round(100,0)
+    }
+    //获取数组中的最大值最小值
+    let max = 0, min = 0;
+    arry1.sort(
+        (a, b) => {
+            return a - b
+        }
+    )
+    max = arry1[arry1.length - 1];
+    min = arry1[0];
+    //获取数组元素之和，平均值
+    let sum = 0, avg = 0;
+    for (let itme of arry1) {
+        sum += itme;
+    }
+    avg = sum / arry1.length;
+    console.log(`第十三题:随机数组为${arry1}\n最大值为:${max}\n最小值为:${min}\n元素之和为:${sum}\n平均值为:${parseInt(avg)}`);
+
+    // 15.封装一个输入半径求圆的面积的函数,提示:prompt(),Π：pi = Math.PI，次方公式：Math.pow(底数, 次方)，结果保留2位有小数。
+    function yuan_mianji(value1) {
+        let mianji = Math.PI * Math.pow(value1, 2);
+        return mianji.toFixed(2);
+    }
+    console.log('第十五题', yuan_mianji(5));
+
+    // 17.封装一个函数，函数可以接收0-2个参数，如果没有参数则返回1-10之间的随机数，如果接收一个参数，则返回0到这个参数之间一个随机整数,
+    // 如果接收两个参数则返回则两个参数之间的一个随机整数。
+    function function_round(value1, value2) {
+        let num = 0
+        if (value1 == null && value2 == null) {
+            return give_round(10, 0)
+        } else if (value1 !== null && value2 == null) {
+            return give_round(value1, 0)
+        } else {
+            //获取最大值最小值，用于获取随机数函数的实参
+            let max = 0, min = 0
+            if (value1 > value2) {
+                max = value1;
+                min = value2;
+            } else {
+                max = value2;
+                min = value1
+            }
+            return give_round(max, min);
+        }
+    }
+    console.log('第十七题', function_round(10, 60));
+    // 19.封装一个函数，接收两个参数，第一个参数全是数字的数组，第二个参数倍数，默认值为1。函数返回一个新数组，数组的所有值都乘以倍数
+    let arry2 = [1, 2, 3, 4];
+    function funcion1(value1, value2) {
+        let arry = value1;
+        let new_arry = [];
+        for (let i = 0; i < arry.length; i++) {
+            new_arry[i] = arry[i] * value2
+        }
+        return new_arry;
+    }
+    console.log('第十九题', funcion1(arry2, 2));
+
+</script>

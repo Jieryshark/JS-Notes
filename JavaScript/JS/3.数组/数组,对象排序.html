@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    // 数组排序
+    // 1.数字排序  数组名.sort(function(){ retrun a-b || retrun b-a}) 
+    let arr = [1, 4, 3, 2, 5, 8, 11];
+    arr.sort(function (a, b) {
+        return a - b; //前位数-后位数实现升序排列
+        //return b - a; //后位数-前位数实现降序排列
+    });
+    console.log(arr);
+
+    //1.对象排序
+    let object = {
+        'name': "露西"
+    }
+    let arr1 = [
+        {
+            'name': "大卫",
+            'age': 20
+        }, {
+            'name': "琪薇",
+            'age': 25
+        }
+    ];
+    arr1.sort(function (a, b) {
+        return b.age - a.age;
+    })
+    console.log(arr1);
+
+    //3.字符串排序
+    let arr2 = ['apple', 'pear', 'peach', 'orange', 'banana'];
+    arr2.sort((a, b) => {
+        return a.localeCompare(b) //a在前面从a-z升序排列 ，亦然反之
+    });
+    console.log(arr2);
+
+    //4.中文排序
+    let city = ['成都', '北京', '重庆', '广州']
+    city.sort((a, b) => {
+        return a.localeCompare(b, "zh-CN");
+    });
+    console.log(city);
+
+    //数组倒序 reverse      ！！不比较大小
+    let arr3 = ['哈哈', 5, 9, 8, 0];
+    arr3.reverse();
+    console.log(arr3); 
+
+
+    // 拓展 1.链式使用
+    let arr4 = [1, 4, 3, 2, 5, 8, 11];
+    let arr5 = arr4.sort((a,b)=>{return a- b}).reverse();
+    console.log(arr5);
+    
+
+
+
+</script>

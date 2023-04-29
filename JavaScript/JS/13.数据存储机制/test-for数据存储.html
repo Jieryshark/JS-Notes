@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .loginBox {
+      width: 300px;
+      height: 250px;
+      outline: 1px solid black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .loginBox div {
+      margin-top: 10px;
+    }
+  </style>
+
+  <body>
+    <div class="loginBox">
+      <div>用户登录</div>
+      <div>
+        <label for="userName">用户名:</label>
+        <input type="text" id="userName" placeholder="请输入用户名" />
+      </div>
+      <div>
+        <label for="passWord">密码:</label>
+        <input type="password" id="passWord" placeholder="请输入密码" />
+      </div>
+      <div><button id="submit">提交</button></div>
+    </div>
+  </body>
+</html>
+<script>
+  let userName = document.querySelector("#userName");
+  let passWord = document.querySelector("#passWord");
+  let submit = document.querySelector("#submit");
+
+  submit.addEventListener("click", function () {
+    //判断用户名和密码是否正确
+    if (userName.value == "klay" && passWord.value == 123456) {
+      let userData = {};
+      userData.userName = userName.value;
+      userData.passWord = passWord.value;
+      //   localStorage.setItem("userData", JSON.stringify(userData));
+      location.href = `./登录成功.html?userName=${userName.value}&userPassWord=${passWord.value}&login=ture`;
+    } else {
+      alert("用户名或密码错误");
+    }
+  });
+</script>

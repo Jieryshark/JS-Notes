@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    //对象  引用型数据类型
+    //创建对象 
+    // 1、原始模式，Object构造函数方式
+    var tea = new Object();
+    tea.name = "大红袍";
+    tea.price = 500;
+    console.log(tea);
+    // 2、原始模式，对象字面量方式 *
+    var dog = {
+        name: '臭蛋',
+        age: 10,
+        type: '中华田园犬',
+        color: '黄短毛',
+        bite: function () {
+            console.log('喜欢睡觉');
+        },
+        hobby: ['汪汪', '到处跑', '吃肉'],
+    }
+    console.log(dog);
+    // 3. 工厂模式
+    function createperson(name, age, sex) {
+        let person = new Object();
+        person.name = name; 
+        person.age = age;
+        person.sex = sex;
+        return person;
+    }
+    console.log(createperson('张三', 20, 'man'));
+    //4.构造函数 
+    /* Person就是构造函数，它提供模板，
+    用来生成对象实例。为了与普通函数区别，
+    构造函数名字的第一个字母通常大写。 */
+    function Person(name, age, sex) {
+        this.name = name;
+        this.aeg = age;
+        this.sex = sex;
+        console.log(this);
+    }
+    let person1=new Person('阿尔敏', 99, 'woman');//new关键词 表明为构造函数 
+    let person2=new Person('三笠',18,'man')
+    // console.log(person1,person2);
+    // 5. 原型模式  作为公有属性
+    Person.prototype.from='日本';
+    // console.log(person1,person2);
+    // 6. 混合模式（构造 + 原型）
+
+</script>

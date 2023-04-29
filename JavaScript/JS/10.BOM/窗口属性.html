@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    body {
+      width: 2200px;
+      height: 1200px;
+      /* background-color: purple; */
+    }
+
+    /* body::-webkit-scrollbar{
+            display: none;
+        } */
+    div {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <button onclick="fun()">点击获取浏览器窗口滚动条垂直滚动的距离</button>
+    <button onclick="fun1()">点击获取浏览器窗口滚动条水平滚动的距离</button>
+  </div>
+
+</body>
+
+</html>
+<script>
+  //窗口属性
+  console.log("实际宽度", window.outerWidth);
+  console.log("实际高度", window.outerHeight);
+  console.log("可见宽度", window.innerWidth);
+  console.log("可见高度", window.innerHeight);
+
+  fun = function () {
+    console.log("浏览器窗口滚动条水平滚动的距离", window.pageYOffset);
+  };
+  fun1 = function () {
+    console.log("浏览器窗口滚动条水平滚动的距离", window.pageXOffset);
+  };
+
+</script>

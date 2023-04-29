@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //创建数组
+        /* // 字面量创建法 创建[ 数组元素,数组元素] 
+        1.数组元素用逗号隔开 
+        2.数组元素可以是任何数据类型 
+        3.数组长度(数组.length)==数组元素的个数==数组最后一个下标值+1
+        4.数组元素的下标值是从0开始  */
+        // let arryA = [1, '二', true, [7, 8, 9]];
+
+        //添加数组元素
+        /*  arryA[4] = '哈哈哈';
+         arryA[99] = 100;
+         console.log(arryA);
+         console.log(arryA.length);
+         //
+         let arryB = new Array(1, 2, 3);
+         console.log(arryB); */
+
+        //使用 访问数组元素
+        //访问 arry[下标值]  修改 arry[下标值]=修改值
+        /*  console.log(arryA[4]);
+         arryA[0] = '一'
+         console.log(arryA); */
+
+        //空位检测 in
+        // console.log(20 in arryA);
+
+        //数组长度 .length
+
+        // 五个遍历方法
+        /* let num = [1, 2, 3, 4, 5, 6, 7];
+        let sum = 0, sum2 = 0, sum3 = 0, sum4 = 0;
+        for (let i = 0; i < num.length; i++) {
+            sum += num[i];
+        }
+        document.write(`${sum}<br>`);
+
+        //map 1.有返回值
+        let value = num.map(
+            function (item, index, arry) {// 1.第一个位置:代表数组元素  2.第二个位置:代表数组下标值  3.第三个位置:代表数组本身  
+                //打印所有数组元素，数组下标值，数组本身
+                // console.log(item, index, arry);
+                //打印所有数组元素
+                // console.log(item);
+                sum2 += item
+                return 1;
+            }
+        )
+        let value = num.map(  
+            (item,index,arr)=>{ //箭头函数
+                console.log(item);
+            }
+        )
+        document.write(`map的返回值为:${value}<br>`)
+        document.write(`${sum2}<br>`)
+
+        //of 循环的是数组元素  取的是数组元素，位置不能改变，可变名字
+        for (let item of num) {
+            // console.log(item);
+            sum3 += item;
+        }
+        document.write(`${sum3}<br>`)
+
+        //in 循环的是下标值 取的是数组下标值，位置不能改变，可变名字
+        for (let index in num) {
+            // console.log(index);
+            sum4 += num[index];
+        }
+        document.write(`${sum4}<br>`)
+
+        //forRach  与map相比没有返回值
+        let value2 = num.forEach(
+            function (item, index, arry) {
+                console.log(item, index, arry);
+                return 1;
+            }
+        )
+        document.write(`map的返回值为:${value2}`) */
+
+
+        let array1 = [1, 2, 3, 4, 2, 5, 6, 7, 2];
+        let array2 = [2, 3, 4, 2];
+        let newarr1 = [];
+        let value = [...array1, ...array2];
+        //第一种方法
+        /* for (let itme of value) {
+            if (itme != 2) {
+                let i = 0;
+                newarr1[newarr1.length] = itme;
+                newarr1[i] = itme;
+                i++;
+            }
+        }
+        console.log(newarr1); */
+
+        //第二种方法
+        /*  for (let index = 0; index < value.length; index++) {
+             const element = value[index];
+             if(element == 2){
+               value.splice(index,1)
+               index--;
+             }
+         }
+         console.log(value); */
+         //第三种办法
+        /* for (let index = 0; index < value.length; index++) {
+            const element = value[index];
+            if (element != 2) {
+                newarr1.push(element);
+            }
+        }
+        console.log(newarr1); */
+        //第四种办法
+        /* value.map(
+            (item, index, arr) => {
+                if (item != 2) {
+                    newarr1.push(item);
+                }
+            }
+        )
+        console.log(newarr1); */
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

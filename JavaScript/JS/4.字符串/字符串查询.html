@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+
+    //查询字符元素 总结：如果返回的是下标值，没有该元素都是返回-1
+    // indexOf() | lastIndexOf 1.返回遇到的第一个指定元素的下标值 2.字符中没有指定元素则返回-1 3.可有第二个参数：代表从该位置从后匹配
+    let str = '祝你今天愉快';
+    console.log(str.indexOf('祝你'));
+
+    // macth() 1.有结果形成数组 2.没有则返回null
+    console.log(str.match('天'));
+    console.log(str.match('a'));
+
+    //search() 1.返回遇到的第一个指定元素的下标值 2.字符中没有指定元素则返回-1 3.括号里只匹配第一个字符
+    console.log(str.search('你'));
+
+    //查询头部|查询尾部
+    console.log(str.startsWith('祝你'));//startsWith 1.查询首位 2.匹配返回true.否则返回false
+    console.log(str.endsWith('愉快'));//endsWith 1.查询末位 2.匹配返回true.否则返回false 3.如需查询一个以上字符,则必须写完整原数组的末尾字符
+
+    //查询 charAt()
+    console.log(str.charAt(1));
+
+    //includes 查询是否包含指定元素
+    console.log(str.includes('你'));
+</script>

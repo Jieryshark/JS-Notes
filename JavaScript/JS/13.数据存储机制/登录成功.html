@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  /* let userData = JSON.parse(localStorage.getItem("userData"));
+  document.write(userData.userName);
+  document.write(userData.passWord); */
+
+  //
+  let data = location.search;
+  console.log(data);
+  //字符串方法
+  /*  let userData = {};//定义对象
+  let nameSt = data.indexOf("=");//确定截取开始位置
+  let nameEnd = data.indexOf("&");//确定结束位置
+  userData.name = data.slice(nameSt + 1, nameEnd);//截取name
+
+
+  data=data.replace(/=/,'');
+  let passWordSt=data.indexOf('=');//确定password开始位置
+  userData.passWord=data.slice(passWordSt+1)
+  console.log(userData); */
+
+  //数组方法
+  let userData = {};//定义新对象
+  data = data.slice(1).split("&");//将传进来的字符串去掉？ 并以&分割为数组
+  data.map((itme, index) => {
+    let element = itme.split("=");//将分割好的数组遍历再以=分割
+    userData[element[0]] = element[1];//赋值到对象
+  });
+  console.log(userData);
+</script>

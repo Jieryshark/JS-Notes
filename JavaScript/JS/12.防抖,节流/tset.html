@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+  </style>
+  <body>
+    <div></div>
+  </body>
+</html>
+<script>
+
+    //节流
+  let div = document.querySelector("div");
+  div.addEventListener("mousemove", Throttle(fn, 1000));
+  function Throttle(fn, time) {
+    let timer = null;
+    return function () {
+      if (!timer) {
+        timer = setTimeout(function () {
+          fn();
+          timer = null;
+        }, time);
+      }
+    };
+  }
+  function fn() {
+    console.log("我是高频率事件节流");
+  }
+</script>
